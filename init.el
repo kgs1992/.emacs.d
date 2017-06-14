@@ -1,7 +1,16 @@
-;; Startup stuff
+;;; init.el --- user init file      -*- no-byte-compile: t -*-
+;; Package and compile related
+(setq load-prefer-newer t)
 (load "~/.emacs.d/package-stuff.el")
+;; (package-initialize)
+(el-get-bundle auto-compile)
+(require 'auto-compile)
+(setq auto-compile-display-buffer nil)
+(setq auto-compile-mode-line-counter t)
+(auto-compile-on-load-mode)
+(auto-compile-on-save-mode)
 
-;; Set exec-path and stuff
+;; Set exec-path from $PATH
 (el-get-bundle exec-path-from-shell)
 (require 'exec-path-from-shell)
 (exec-path-from-shell-initialize)
