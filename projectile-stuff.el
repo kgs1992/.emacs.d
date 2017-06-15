@@ -4,6 +4,8 @@
 (projectile-mode 1)
 (setq projectile-enable-caching t)
 
+(setq projectile-mode-line '(:eval (format " [%s]" (projectile-project-name))))
+
 ;; Recent files
 (recentf-mode 1)
 (setq recentf-max-saved-items 500)

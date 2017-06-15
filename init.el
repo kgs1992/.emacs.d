@@ -28,6 +28,7 @@
 (load "~/.emacs.d/magit-stuff.el")
 (load "~/.emacs.d/editing-stuff.el")
 (load "~/.emacs.d/tabbar-stuff.el")
+(load "~/.emacs.d/modeline-stuff.el")
 
 ;; PYTHON RELATED
 (load "~/.emacs.d/python-stuff.el")
