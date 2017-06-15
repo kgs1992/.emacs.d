@@ -1,7 +1,10 @@
 ;;; init.el --- user init file      -*- no-byte-compile: t -*-
+
+
 ;; Package and compile related
 (setq load-prefer-newer t)
 (load "~/.emacs.d/package-stuff.el")
+;; package-initialize in called inside package-stuff.el
 ;; (package-initialize)
 (el-get-bundle auto-compile)
 (require 'auto-compile)
@@ -15,7 +18,10 @@
 (require 'exec-path-from-shell)
 (exec-path-from-shell-initialize)
 
-;; Configure useful emacs extensions
+
+;;;; Configure useful emacs extensions
+
+
 (load "~/.emacs.d/helm-stuff.el")
 (load "~/.emacs.d/projectile-stuff.el")
 (load "~/.emacs.d/tramp-stuff.el")
