@@ -4,6 +4,7 @@
 (setq message-log-max 2000)
 (size-indication-mode t)
 (delete-selection-mode 0)
+(transient-mark-mode 0)
 (setq-default wrap-lines t)
 
 ;; Auto refresh buffers
