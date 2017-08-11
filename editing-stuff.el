@@ -97,6 +97,11 @@
 (setq-default tab-width 4)
 (setq indent-line-function 'insert-tab)
 
+;; Always indent
+(el-get-bundle aggressive-indent-mode)
+(require 'aggressive-indent)
+(add-hook 'prog-mode-hook 'aggressive-indent-mode)
+
 ;; Multiple cursors
 (el-get-bundle multiple-cursors)
 (require 'multiple-cursors)
