@@ -45,4 +45,8 @@
                   (load "~/.emacs.d/theme-stuff.el"))))
   (load "~/.emacs.d/theme-stuff.el"))
 
+(if (daemonp)
+    (global-unset-key (kbd "C-z"))
+  )
+
 (el-get 'sync)
