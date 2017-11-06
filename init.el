@@ -4,7 +4,7 @@
 ;; Package and compile related
 (setq load-prefer-newer t)
 (load "~/.emacs.d/package-stuff.el")
-;; package-initialize in called inside package-stuff.el
+;; package-initialize is called inside package-stuff.el
 ;; (package-initialize)
 (el-get-bundle auto-compile)
 (require 'auto-compile)

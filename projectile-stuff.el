@@ -14,6 +14,7 @@
 ;; Helm Projectile
 (el-get-bundle helm-projectile)
 (require 'helm-projectile)
+(require 'helm-for-files)
 (add-to-list 'helm-for-files-preferred-list helm-source-projectile-projects)
 (add-to-list 'helm-for-files-preferred-list helm-source-projectile-files-list)
 (add-to-list 'helm-for-files-preferred-list helm-source-projectile-directories-list)
