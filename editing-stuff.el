@@ -57,12 +57,19 @@
 (show-paren-mode 1)
 (setq show-paren-style 'expression)
 (el-get-bundle smartparens)
-(require 'smartparens)
-(smartparens-global-mode 1)
+;; (require 'smartparens)
+;; (smartparens-global-mode 1)
 
 ;; Autocomplete
 (el-get-bundle auto-complete)
 (require 'auto-complete)
+(require 'auto-complete-config)
+(ac-config-default)
+(setq
+ ac-auto-show-menu 0.01
+ ;; ac-auto-start 3
+ ac-menu-height 20
+ )
 (global-auto-complete-mode t)
 
 
@@ -99,8 +106,8 @@
 
 ;; Always indent
 (el-get-bundle aggressive-indent-mode)
-(require 'aggressive-indent)
-(add-hook 'prog-mode-hook 'aggressive-indent-mode)
+;; (require 'aggressive-indent)
+;; (add-hook 'prog-mode-hook 'aggressive-indent-mode)
 
 ;; Multiple cursors
 (el-get-bundle multiple-cursors)
