@@ -3,6 +3,8 @@
 (require 'projectile)
 (projectile-mode 1)
 (setq projectile-enable-caching t)
+(require 'helm)
+(setq projectile-completion-system 'helm)
 
 (setq projectile-mode-line '(:eval (format " [%s]" (projectile-project-name))))
 
@@ -14,6 +16,8 @@
 ;; Helm Projectile
 (el-get-bundle helm-projectile)
 (require 'helm-projectile)
+(helm-projectile-on)
+(setq projectile-switch-project-action 'helm-projectile)
 (require 'helm-for-files)
 (add-to-list 'helm-for-files-preferred-list helm-source-projectile-projects)
 (add-to-list 'helm-for-files-preferred-list helm-source-projectile-files-list)
