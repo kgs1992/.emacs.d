@@ -3,6 +3,8 @@ auto-save-list/
 ac-comphist.dat
 el-get/
 elpa/
+eshell/
+url/
 projectile-bookmarks.eld
 recentf
 projectile.cache

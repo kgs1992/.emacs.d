@@ -37,6 +37,9 @@
 ;; GO RELATED
 (load "~/.emacs.d/go-stuff.el")
 
+;; JSX RELATED
+(load "~/.emacs.d/jsx-stuff.el")
+
 
 ;; Theme related
 (if (daemonp)

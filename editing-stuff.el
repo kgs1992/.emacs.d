@@ -66,7 +66,7 @@
 (require 'auto-complete-config)
 (ac-config-default)
 (setq
- ac-auto-show-menu 0.01
+ ac-auto-show-menu 0
  ;; ac-auto-start 3
  ac-menu-height 20
  )
