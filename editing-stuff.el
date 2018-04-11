@@ -116,3 +116,24 @@
 (global-set-key (kbd "C-c C-.") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-c ,") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c .") 'mc/mark-all-like-this)
+
+;; Undo-redo keybindings
+(global-set-key (kbd "C--") 'undo-only)
+(global-set-key (kbd "M--") 'undo-tree-redo)
+
+;; Backward delete word instead of kill
+(el-get-bundle evil)
+(require 'evil)
+(global-set-key (kbd "M-DEL") 'evil-delete-backward-word)
+
+(el-get-bundle flycheck)
+(require 'flycheck)
+(add-hook 'after-init-hook 'global-flycheck-mode)
+(defun flycheck-list-errors-only-when-errors ()
+  (if flycheck-current-errors
+      (flycheck-list-errors)
+    (-when-let (buffer (get-buffer flycheck-error-list-buffer))
+      (dolist (window (get-buffer-window-list buffer))
+        (quit-window nil window)))))
+
+(add-hook 'before-save-hook #'flycheck-list-errors-only-when-errors)
