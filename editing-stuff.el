@@ -66,9 +66,10 @@
 (require 'auto-complete-config)
 (ac-config-default)
 (setq
- ac-auto-show-menu 0
- ;; ac-auto-start 3
+ ac-auto-show-menu 1
+ ac-auto-start t
  ac-menu-height 20
+ ac-delay 0.01
  )
 (global-auto-complete-mode t)
 
@@ -135,5 +136,9 @@
     (-when-let (buffer (get-buffer flycheck-error-list-buffer))
       (dolist (window (get-buffer-window-list buffer))
         (quit-window nil window)))))
-
 (add-hook 'before-save-hook #'flycheck-list-errors-only-when-errors)
+
+(el-get-bundle format-all
+  :url "https://raw.githubusercontent.com/lassik/emacs-format-all-the-code/master/format-all.el")
+(require 'format-all)
+(add-hook 'prog-mode-hook #'format-all-mode)
