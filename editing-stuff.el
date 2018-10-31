@@ -83,8 +83,7 @@
 (global-set-key (kbd "M-;") 'comment-or-uncomment-region)
 
 ;; Show column number and line number
-(el-get-bundle nlinum
-  :url "https://raw.githubusercontent.com/emacsmirror/nlinum/master/nlinum.el")
+(el-get-bundle emacsmirror/nlinum)
 (require 'nlinum)
 (dolist (mode '(column-number-mode line-number-mode))
   (when (fboundp mode) (funcall mode t)))
