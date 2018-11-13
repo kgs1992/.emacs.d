@@ -39,9 +39,9 @@
 (setq backup-directory-alist `(("." . "~/.saves")))
 (setq backup-by-copying t)
 (setq delete-old-versions t
-  kept-new-versions 6
-  kept-old-versions 2
-  version-control t)
+      kept-new-versions 6
+      kept-old-versions 2
+      version-control t)
 
 ;; Auto highlight symbol
 (el-get-bundle auto-highlight-symbol)
@@ -85,6 +85,7 @@
 ;; Show column number and line number
 (el-get-bundle emacsmirror/nlinum)
 (require 'nlinum)
+(setq nlinum-format "%d\u2502")
 (dolist (mode '(column-number-mode line-number-mode))
   (when (fboundp mode) (funcall mode t)))
 
@@ -141,3 +142,8 @@
   :url "https://raw.githubusercontent.com/lassik/emacs-format-all-the-code/master/format-all.el")
 (require 'format-all)
 (add-hook 'prog-mode-hook #'format-all-mode)
+
+;; easy-kill
+(el-get-bundle leoliu/easy-kill)
+(require 'easy-kill)
+(global-set-key [remap kill-ring-save] 'easy-kill)

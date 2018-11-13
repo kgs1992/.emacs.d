@@ -42,3 +42,10 @@
 (bind-key "q" #'magit-quit-session magit-status-mode-map)
 
 (global-set-key (kbd "C-x g") 'magit-status)
+
+;; Git gutter
+(el-get-bundle 'git-gutter-fringe+)
+(require 'git-gutter-fringe+)
+(global-git-gutter+-mode)
+(global-set-key (kbd "M-p") 'git-gutter+-previous-hunk)
+(global-set-key (kbd "M-n") 'git-gutter+-next-hunk)
