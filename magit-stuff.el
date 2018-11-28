@@ -40,6 +40,8 @@
   (custom/kill-buffers "^\\*magit.*\\*")
   (jump-to-register :magit-fullscreen))
 
+(el-get-bundle use-package)
+(require 'use-package)
 (bind-key "q" #'magit-quit-session magit-status-mode-map)
 
 (global-set-key (kbd "C-x g") 'magit-status)
