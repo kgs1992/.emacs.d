@@ -65,5 +65,5 @@ want to use in the modeline *in lieu of* the original.")
 (doom-modeline-init)
 (setq doom-modeline-buffer-file-name-style 'relative-to-project)
 
-(provide modeline-stuff)
+(provide 'modeline-stuff)
 ;;; modeline-stuff.el ends here
