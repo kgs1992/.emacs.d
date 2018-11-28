@@ -1,3 +1,15 @@
+;;; projectile-stuff.el --- Projectile related config
+;;
+;; Author:  Kiran Shenoy
+;; URL:     https://github.com/kgs1992/.emacs.d/
+;;
+;;; Commentary:
+;;
+;; This package contains all of the projectile related config.
+;;
+;;;
+
+;;; Code:
 ;; Projectile
 (el-get-bundle projectile)
 (require 'projectile)
@@ -27,3 +39,6 @@
 (global-set-key (kbd "C-x C-f") #'helm-find-files)
 (setq helm-find-file-ignore-thing-at-point t)
 (define-key helm-find-files-map (kbd "M-DEL") 'helm-find-files-up-one-level)
+
+(provide 'projectile-stuff)
+;;; projectile-stuff.el ends here

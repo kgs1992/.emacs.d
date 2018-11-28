@@ -1,3 +1,15 @@
+;;; package-stuff.el --- Package related config
+;;
+;; Author:  Kiran Shenoy
+;; URL:     https://github.com/kgs1992/.emacs.d/
+;;
+;;; Commentary:
+;;
+;; This package contains all of the package related config.
+;;
+;;;
+
+;;; Code:
 ;; El-get
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 (unless (require 'el-get nil 'noerror)
@@ -19,3 +31,6 @@
 (package-initialize)
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/local-packages"))
+
+(provide 'package-stuff)
+;;; package-stuff.el ends here

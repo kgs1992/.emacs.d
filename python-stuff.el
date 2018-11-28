@@ -1,3 +1,15 @@
+;;; python-stuff.el --- Python related config
+;;
+;; Author:  Kiran Shenoy
+;; URL:     https://github.com/kgs1992/.emacs.d/
+;;
+;;; Commentary:
+;;
+;; This package contains all of the python related config.
+;;
+;;;
+
+;;; Code:
 ;; Virtualenv related
 (el-get-bundle virtualenvwrapper)
 (require 'virtualenvwrapper)
@@ -24,3 +36,6 @@
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:setup-keys t)
 (setq jedi:complete-on-dot t)
+
+(provide 'python-stuff)
+;;; python-stuff.el ends here

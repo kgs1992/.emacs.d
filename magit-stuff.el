@@ -1,3 +1,15 @@
+;;; magit-stuff.el --- Magit related config
+;;
+;; Author:  Kiran Shenoy
+;; URL:     https://github.com/kgs1992/.emacs.d/
+;;
+;;; Commentary:
+;;
+;; This package contains all of the Magit related config.
+;;
+;;;
+
+;;; Code:
 ;; Magit stuff
 (el-get-bundle magit)
 (require 'magit)
@@ -6,17 +18,20 @@
 (setq magit-diff-use-overlays nil)
 
 (defun magit-toggle-whitespace ()
+  "Toggle between ignore and don't ignore whitespace."
   (interactive)
   (if (member "-w" magit-diff-options)
       (magit-dont-ignore-whitespace)
     (magit-ignore-whitespace)))
 
 (defun magit-ignore-whitespace ()
+  "Ignore whitespace."
   (interactive)
   (add-to-list 'magit-diff-options "-w")
   (magit-refresh))
 
 (defun magit-dont-ignore-whitespace ()
+  "Don't ignore whitespace."
   (interactive)
   (setq magit-diff-options (remove "-w" magit-diff-options))
   (magit-refresh))
@@ -52,3 +67,6 @@
 (global-git-gutter+-mode)
 (global-set-key (kbd "M-p") 'git-gutter+-previous-hunk)
 (global-set-key (kbd "M-n") 'git-gutter+-next-hunk)
+
+(provide 'magit-stuff)
+;;; magit-stuff.el ends here

@@ -1,6 +1,17 @@
+;;; modeline-stuff.el --- Modeline related config
+;;
+;; Author:  Kiran Shenoy
+;; URL:     https://github.com/kgs1992/.emacs.d/
+;;
+;;; Commentary:
+;;
+;; This package contains all of the modeline related config.
+;;
+;;;
+
+;;; Code:
 ;; Cleanup the modeline
 ;; source: https://www.masteringemacs.org/article/hiding-replacing-modeline-strings
-
 (defvar mode-line-cleaner-alist
   `((auto-complete-mode . " α")
     (yas/minor-mode . " υ")
@@ -53,3 +64,6 @@ want to use in the modeline *in lieu of* the original.")
 (require 'doom-modeline)
 (doom-modeline-init)
 (setq doom-modeline-buffer-file-name-style 'relative-to-project)
+
+(provide modeline-stuff)
+;;; modeline-stuff.el ends here

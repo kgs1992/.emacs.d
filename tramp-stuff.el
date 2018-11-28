@@ -1,3 +1,15 @@
+;;; tramp-stuff.el --- Tramp related config
+;;
+;; Author:  Kiran Shenoy
+;; URL:     https://github.com/kgs1992/.emacs.d/
+;;
+;;; Commentary:
+;;
+;; This package contains all of the tramp related config.
+;;
+;;;
+
+;;; Code:
 ;; Tramp for remote editing
 (require 'tramp)
 (setq tramp-default-method "sshx")
@@ -6,3 +18,6 @@
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
 (setq tramp-backup-directory-alist backup-directory-alist)
+
+(provide 'tramp-stuff)
+;;; tramp-stuff.el ends here

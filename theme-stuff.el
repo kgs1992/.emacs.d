@@ -1,3 +1,15 @@
+;;; theme-stuff.el --- Theming related config
+;;
+;; Author:  Kiran Shenoy
+;; URL:     https://github.com/kgs1992/.emacs.d/
+;;
+;;; Commentary:
+;;
+;; This package contains all of the theme related config.
+;;
+;;;
+
+;;; Code:
 ;; Bar cursor
 (setq-default cursor-type '(bar . 2))
 
@@ -5,7 +17,7 @@
 ;; (el-get-bundle 'monokai-theme)
 ;; (require 'monokai-theme)
 ;; (load-theme 'monokai t)
-(el-get-bundle hlissner/emacs-doom-themes)
+(el-get-bundle 'hlissner/emacs-doom-themes)
 (require 'doom-themes)
 
 ;; Global settings (defaults)
@@ -92,3 +104,6 @@ That is, a string used to represent it on the tab bar."
                     :background "black")
 (set-face-attribute 'magit-diff-removed-highlight nil
                     :background "black")
+
+(provide 'theme-stuff)
+;;; theme-stuff.el ends here

@@ -1,3 +1,15 @@
+;;; jsx-stuff.el --- JSX related config
+;;
+;; Author:  Kiran Shenoy
+;; URL:     https://github.com/kgs1992/.emacs.d/
+;;
+;;; Commentary:
+;;
+;; This package contains all of the JSX related config.
+;;
+;;;
+
+;;; Code:
 ;; rjsx-mode
 (el-get-bundle rjsx-mode)
 (require 'rjsx-mode)
@@ -16,14 +28,15 @@
 
 ;; disable jshint since we prefer eslint checking
 (setq-default flycheck-disabled-checkers
-  (append flycheck-disabled-checkers
-    '(javascript-jshint)))
+              (append flycheck-disabled-checkers
+                      '(javascript-jshint)))
 
 ;; use eslint with rjsx-mode for jsx files
 (flycheck-add-mode 'javascript-eslint 'rjsx-mode)
 
 ;; use local eslint from node_modules before global
 (defun my/use-eslint-from-node-modules ()
+  "Use local eslint from node_modules before global."
   (let* ((root (locate-dominating-file
                 (or (buffer-file-name) default-directory)
                 "node_modules"))
@@ -34,3 +47,6 @@
       (setq-local flycheck-javascript-eslint-executable eslint))))
 
 (add-hook 'flycheck-mode-hook #'my/use-eslint-from-node-modules)
+
+(provide 'jsx-stuff)
+;;; jsx-stuff.el ends here

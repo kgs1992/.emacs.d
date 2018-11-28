@@ -1,3 +1,15 @@
+;;; editing-stuff.el --- Editor related config
+;;
+;; Author:  Kiran Shenoy
+;; URL:     https://github.com/kgs1992/.emacs.d/
+;;
+;;; Commentary:
+;;
+;; This package contains all of the editor related config.
+;;
+;;;
+
+;;; Code:
 ;; General purpose stuff to make editing more peaceful
 (setq inhibit-startup-screen t)
 (setq debug-on-quit nil)
@@ -127,6 +139,7 @@
 (require 'flycheck)
 (add-hook 'after-init-hook 'global-flycheck-mode)
 (defun flycheck-list-errors-only-when-errors ()
+  "Show buffer with flycheck error."
   (if flycheck-current-errors
       (flycheck-list-errors)
     (-when-let (buffer (get-buffer flycheck-error-list-buffer))
@@ -143,3 +156,6 @@
 (el-get-bundle leoliu/easy-kill)
 (require 'easy-kill)
 (global-set-key [remap kill-ring-save] 'easy-kill)
+
+(provide 'editing-stuff)
+;;; editing-stuff.el ends here

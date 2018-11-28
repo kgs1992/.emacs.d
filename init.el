@@ -1,6 +1,15 @@
 ;;; init.el --- user init file      -*- no-byte-compile: t -*-
+;;
+;; Author:  Kiran Shenoy
+;; URL:     https://github.com/kgs1992/.emacs.d/
+;;
+;;; Commentary:
+;;
+;; Most of this is borrowed and is very messy.
+;;
+;;;
 
-
+;;; Code:
 ;; Package and compile related
 (setq load-prefer-newer t)
 (load "~/.emacs.d/package-stuff.el")
@@ -54,3 +63,6 @@
   )
 
 (el-get 'sync)
+
+(provide 'init)
+;;; init.el ends here
