@@ -6,6 +6,7 @@
 (delete-selection-mode 0)
 (transient-mark-mode 0)
 (setq-default wrap-lines t)
+(global-hl-line-mode t )
 
 ;; Auto refresh buffers
 (global-auto-revert-mode 1)
@@ -18,11 +19,6 @@
 ;; DisableMenubars and Toolbars
 (menu-bar-mode -1)
 (tool-bar-mode -1)
-
-;; Powerline
-(el-get-bundle powerline)
-(require 'powerline)
-(powerline-default-theme)
 
 ;; ;; Multiple Major Mode support
 ;; (require 'mmm-auto)

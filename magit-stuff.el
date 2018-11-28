@@ -3,6 +3,7 @@
 (require 'magit)
 (setq magit-last-seen-setup-instructions "1.4.0")
 (setq magit-buffer-name-format "*%x%M%v: %t%x*")
+(setq magit-diff-use-overlays nil)
 
 (defun magit-toggle-whitespace ()
   (interactive)

@@ -28,13 +28,28 @@ want to use in the modeline *in lieu of* the original.")
   (interactive)
   (loop for cleaner in mode-line-cleaner-alist
         do (let* ((mode (car cleaner))
-                 (mode-str (cdr cleaner))
-                 (old-mode-str (cdr (assq mode minor-mode-alist))))
+                  (mode-str (cdr cleaner))
+                  (old-mode-str (cdr (assq mode minor-mode-alist))))
              (when old-mode-str
-                 (setcar old-mode-str mode-str))
-               ;; major mode
+               (setcar old-mode-str mode-str))
+             ;; major mode
              (when (eq mode major-mode)
                (setq mode-name mode-str)))))
 
 
 (add-hook 'after-change-major-mode-hook 'clean-mode-line)
+
+;;doom-modeline
+(el-get-bundle 'eldoc-eval)
+(el-get-bundle 'all-the-icons)
+(el-get-bundle 'f)
+(el-get-bundle 'dash)
+(el-get-bundle 's)
+(el-get-bundle rx
+  :url "https://raw.githubusercontent.com/typester/emacs/master/lisp/emacs-lisp/rx.el")
+(el-get-bundle shrink-path
+  :url "https://gitlab.com/bennya/shrink-path.el/raw/master/shrink-path.el")
+(el-get-bundle seagle0128/doom-modeline)
+(require 'doom-modeline)
+(doom-modeline-init)
+(setq doom-modeline-buffer-file-name-style 'relative-to-project)
