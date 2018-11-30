@@ -19,57 +19,58 @@
 
 ;; Package and compile related
 (setq load-prefer-newer t)
+;; Init package
 (load "~/.emacs.d/package-stuff.el")
-;; package-initialize is called inside package-stuff.el
-;; (package-initialize)
-(el-get-bundle auto-compile)
-(require 'auto-compile)
-(setq auto-compile-display-buffer nil)
-(setq auto-compile-mode-line-counter t)
-(auto-compile-on-load-mode)
-(auto-compile-on-save-mode)
 
-;; Set exec-path from $PATH
-(el-get-bundle exec-path-from-shell)
-(require 'exec-path-from-shell)
-(exec-path-from-shell-initialize)
+;; ;; Auto compile all
+;; (el-get-bundle auto-compile)
+;; (require 'auto-compile)
+;; (setq auto-compile-display-buffer nil)
+;; (setq auto-compile-mode-line-counter t)
+;; (auto-compile-on-load-mode)
+;; (auto-compile-on-save-mode)
 
-
-;;;; Configure useful emacs extensions
+;; ;; Set exec-path from $PATH
+;; (el-get-bundle exec-path-from-shell)
+;; (require 'exec-path-from-shell)
+;; (exec-path-from-shell-initialize)
 
 
-(load "~/.emacs.d/helm-stuff.el")
-(load "~/.emacs.d/projectile-stuff.el")
-(load "~/.emacs.d/grep-stuff.el")
-(load "~/.emacs.d/tramp-stuff.el")
-(load "~/.emacs.d/magit-stuff.el")
-(load "~/.emacs.d/editing-stuff.el")
-(load "~/.emacs.d/tabbar-stuff.el")
-(load "~/.emacs.d/modeline-stuff.el")
-
-;; PYTHON RELATED
-(load "~/.emacs.d/python-stuff.el")
-
-;; GO RELATED
-(load "~/.emacs.d/go-stuff.el")
-
-;; JSX RELATED
-(load "~/.emacs.d/jsx-stuff.el")
+;; ;;;; Configure useful emacs extensions
 
 
-;; Theme related
-(if (daemonp)
-    (add-hook 'after-make-frame-functions
-              (lambda (frame)
-                (with-selected-frame frame
-                  (load "~/.emacs.d/theme-stuff.el"))))
-  (load "~/.emacs.d/theme-stuff.el"))
+;; (load "~/.emacs.d/helm-stuff.el")
+;; (load "~/.emacs.d/projectile-stuff.el")
+;; (load "~/.emacs.d/grep-stuff.el")
+;; (load "~/.emacs.d/tramp-stuff.el")
+;; (load "~/.emacs.d/magit-stuff.el")
+;; (load "~/.emacs.d/editing-stuff.el")
+;; (load "~/.emacs.d/tabbar-stuff.el")
+;; (load "~/.emacs.d/modeline-stuff.el")
 
-(if (daemonp)
-    (global-unset-key (kbd "C-z"))
-  )
+;; ;; PYTHON RELATED
+;; (load "~/.emacs.d/python-stuff.el")
 
-(el-get 'sync)
+;; ;; GO RELATED
+;; (load "~/.emacs.d/go-stuff.el")
+
+;; ;; JSX RELATED
+;; (load "~/.emacs.d/jsx-stuff.el")
+
+
+;; ;; Theme related
+;; (if (daemonp)
+;;     (add-hook 'after-make-frame-functions
+;;               (lambda (frame)
+;;                 (with-selected-frame frame
+;;                   (load "~/.emacs.d/theme-stuff.el"))))
+;;   (load "~/.emacs.d/theme-stuff.el"))
+
+;; (if (daemonp)
+;;     (global-unset-key (kbd "C-z"))
+;;   )
+
+;; (el-get 'sync)
 
 ;; Reset startup optimizations
 (add-hook 'emacs-startup-hook
