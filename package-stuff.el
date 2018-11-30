@@ -12,13 +12,17 @@
 ;;; Code:
 ;; Package config & init
 (require 'package)
-(setq package-archives '(("melpa" . "http://melpa.org/packages/")
+(setq package--init-file-ensured t ; Don't modify init
+      package-archives '(("melpa" . "http://melpa.org/packages/")
                          ("gnu" . "http://elpa.gnu.org/packages/")))
 (package-initialize)
 
+;; Ensure we have use-package
 (dolist (package '(use-package))
   (unless (package-installed-p package)
+    (package-refresh-contents)
     (package-install package)))
+(require 'use-package)
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/local-packages"))
 

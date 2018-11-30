@@ -14,8 +14,10 @@
 (defvar old--file-name-handler-alist file-name-handler-alist)
 (setq gc-cons-threshold 402653184      ; Increase memory threshold
       gc-cons-percentage 0.6           ; for garbage collection.
-      file-name-handler-alist nil      ; Unset file handlers.
-      package--init-file-ensured t)    ; Don't modify init
+      file-name-handler-alist nil)      ; Unset file handlers
+
+;; Set custom file
+(setq custom-file "~/.emacs.d/cusom-stuff.el")
 
 ;; Package and compile related
 (setq load-prefer-newer t)
@@ -71,6 +73,7 @@
 ;;   )
 
 ;; (el-get 'sync)
+(load custom-file :noerror)
 
 ;; Reset startup optimizations
 (add-hook 'emacs-startup-hook
