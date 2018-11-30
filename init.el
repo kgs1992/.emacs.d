@@ -17,7 +17,7 @@
       file-name-handler-alist nil)      ; Unset file handlers
 
 ;; Set custom file
-(setq custom-file "~/.emacs.d/cusom-stuff.el")
+(setq custom-file "~/.emacs.d/custom-stuff.el")
 
 ;; Package and compile related
 (setq load-prefer-newer t)
