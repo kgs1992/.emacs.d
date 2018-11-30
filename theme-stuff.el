@@ -44,8 +44,8 @@
  :box '(:line-width 1 :color "gray30" :style nil))
 (set-face-attribute
  'tabbar-selected nil
- :background "gray75"
- :foreground "#A41F99"
+ :background "bright black"
+ :foreground "orange" ;;"#A41F99"
  :box '(:line-width 1 :color "gray75" :style nil))
 (set-face-attribute
  'tabbar-highlight nil
