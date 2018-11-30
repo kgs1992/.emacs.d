@@ -24,30 +24,34 @@
 ;; Init package
 (load "~/.emacs.d/package-stuff.el")
 
-;; ;; Auto compile all
-;; (el-get-bundle auto-compile)
-;; (require 'auto-compile)
-;; (setq auto-compile-display-buffer nil)
-;; (setq auto-compile-mode-line-counter t)
-;; (auto-compile-on-load-mode)
-;; (auto-compile-on-save-mode)
+;; Auto compile all
+(use-package auto-compile
+  :ensure t
+  :demand t
+  :config
+  (setq auto-compile-display-buffer nil
+        auto-compile-mode-line-counter t)
+  (auto-compile-on-load-mode)
+  (auto-compile-on-save-mode))
 
-;; ;; Set exec-path from $PATH
-;; (el-get-bundle exec-path-from-shell)
-;; (require 'exec-path-from-shell)
-;; (exec-path-from-shell-initialize)
+;; Set exec-path from $PATH
+(use-package exec-path-from-shell
+  :ensure t
+  :demand t
+  :config
+  (exec-path-from-shell-initialize))
 
 
-;; ;;;; Configure useful emacs extensions
+;;;; Configure useful emacs extensions
 
 
-;; (load "~/.emacs.d/helm-stuff.el")
-;; (load "~/.emacs.d/projectile-stuff.el")
+(load "~/.emacs.d/helm-stuff.el")
+(load "~/.emacs.d/projectile-stuff.el")
 ;; (load "~/.emacs.d/grep-stuff.el")
 ;; (load "~/.emacs.d/tramp-stuff.el")
 ;; (load "~/.emacs.d/magit-stuff.el")
 ;; (load "~/.emacs.d/editing-stuff.el")
-;; (load "~/.emacs.d/tabbar-stuff.el")
+(load "~/.emacs.d/tabbar-stuff.el")
 ;; (load "~/.emacs.d/modeline-stuff.el")
 
 ;; ;; PYTHON RELATED
@@ -60,19 +64,18 @@
 ;; (load "~/.emacs.d/jsx-stuff.el")
 
 
-;; ;; Theme related
-;; (if (daemonp)
-;;     (add-hook 'after-make-frame-functions
-;;               (lambda (frame)
-;;                 (with-selected-frame frame
-;;                   (load "~/.emacs.d/theme-stuff.el"))))
-;;   (load "~/.emacs.d/theme-stuff.el"))
+;; Theme related
+(if (daemonp)
+    (add-hook 'after-make-frame-functions
+              (lambda (frame)
+                (with-selected-frame frame
+                  (load "~/.emacs.d/theme-stuff.el"))))
+  (load "~/.emacs.d/theme-stuff.el"))
 
-;; (if (daemonp)
-;;     (global-unset-key (kbd "C-z"))
-;;   )
+;; Unbind C-z
+(if (daemonp)
+    (global-unset-key (kbd "C-z")))
 
-;; (el-get 'sync)
 (load custom-file :noerror)
 
 ;; Reset startup optimizations

@@ -11,15 +11,19 @@
 
 ;;; Code:
 ;; Session
-(el-get-bundle session)
-(require 'session)
-(add-hook 'after-init-hook 'session-initialize)
+(use-package session
+  :ensure t
+  :hook (after-init-hook . session-initialize))
 
 ;; Helm
-(el-get-bundle helm)
-(require 'helm-config)
-(helm-mode 1)
-(global-set-key (kbd "M-x") 'helm-M-x)
+(use-package helm
+  :ensure t
+  :config
+  (helm-mode 1)
+  :bind (("M-x" . 'helm-M-x)
+         ("C-x f" . 'helm-for-files)
+         ("C-x C-f" . 'helm-find-files)
+         ("M-DEL" . 'helm-find-files-up-one-level)))
 
 (provide 'helm-stuff)
 ;;; helm-stuff.el ends here
