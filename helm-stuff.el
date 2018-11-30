@@ -1,4 +1,4 @@
-;;; helm-stuff.el --- Helm related config
+;;; helm-stuff.el --- Helm related config -*- lexical-binding: t; -*-
 ;;
 ;; Author:  Kiran Shenoy
 ;; URL:     https://github.com/kgs1992/.emacs.d/

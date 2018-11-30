@@ -1,4 +1,4 @@
-;;; go-stuff.el --- Golang related config
+;;; go-stuff.el --- Golang related config  -*- lexical-binding: t; -*-
 ;;
 ;; Author:  Kiran Shenoy
 ;; URL:     https://github.com/kgs1992/.emacs.d/

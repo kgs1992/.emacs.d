@@ -1,4 +1,4 @@
-;;; projectile-stuff.el --- Projectile related config
+;;; projectile-stuff.el --- Projectile related config -*- lexical-binding: t; -*-
 ;;
 ;; Author:  Kiran Shenoy
 ;; URL:     https://github.com/kgs1992/.emacs.d/

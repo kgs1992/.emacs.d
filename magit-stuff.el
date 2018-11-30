@@ -1,4 +1,4 @@
-;;; magit-stuff.el --- Magit related config
+;;; magit-stuff.el --- Magit related config -*- lexical-binding: t; -*-
 ;;
 ;; Author:  Kiran Shenoy
 ;; URL:     https://github.com/kgs1992/.emacs.d/

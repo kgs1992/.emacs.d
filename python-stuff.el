@@ -1,4 +1,4 @@
-;;; python-stuff.el --- Python related config
+;;; python-stuff.el --- Python related config -*- lexical-binding: t; -*-
 ;;
 ;; Author:  Kiran Shenoy
 ;; URL:     https://github.com/kgs1992/.emacs.d/

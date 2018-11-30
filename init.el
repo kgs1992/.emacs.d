@@ -1,4 +1,4 @@
-;;; init.el --- user init file      -*- no-byte-compile: t -*-
+;;; init.el --- user init file -*- lexical-binding: t; -*- -*- no-byte-compile: t; -*-
 ;;
 ;; Author:  Kiran Shenoy
 ;; URL:     https://github.com/kgs1992/.emacs.d/
@@ -10,6 +10,13 @@
 ;;;
 
 ;;; Code:
+;; Speed up startup
+(defvar old--file-name-handler-alist file-name-handler-alist)
+(setq gc-cons-threshold 402653184      ; Increase memory threshold
+      gc-cons-percentage 0.6           ; for garbage collection.
+      file-name-handler-alist nil      ; Unset file handlers.
+      package--init-file-ensured t)    ; Don't modify init
+
 ;; Package and compile related
 (setq load-prefer-newer t)
 (load "~/.emacs.d/package-stuff.el")
@@ -63,6 +70,12 @@
   )
 
 (el-get 'sync)
+
+;; Reset startup optimizations
+(add-hook 'emacs-startup-hook
+          (lambda () (setq gc-cons-threshold 16777216
+                           gc-cons-percentage 0.1
+                           file-name-handler-alist old--file-name-handler-alist)))
 
 (provide 'init)
 ;;; init.el ends here

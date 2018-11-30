@@ -1,4 +1,4 @@
-;;; jsx-stuff.el --- JSX related config
+;;; jsx-stuff.el --- JSX related config -*- lexical-binding: t; -*-
 ;;
 ;; Author:  Kiran Shenoy
 ;; URL:     https://github.com/kgs1992/.emacs.d/

@@ -1,4 +1,4 @@
-;;; theme-stuff.el --- Theming related config
+;;; theme-stuff.el --- Theming related config -*- lexical-binding: t; -*-
 ;;
 ;; Author:  Kiran Shenoy
 ;; URL:     https://github.com/kgs1992/.emacs.d/
@@ -17,7 +17,7 @@
 ;; (el-get-bundle 'monokai-theme)
 ;; (require 'monokai-theme)
 ;; (load-theme 'monokai t)
-(el-get-bundle 'hlissner/emacs-doom-themes)
+(el-get-bundle hlissner/emacs-doom-themes)
 (require 'doom-themes)
 
 ;; Global settings (defaults)

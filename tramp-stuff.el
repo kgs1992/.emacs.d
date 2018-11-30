@@ -1,4 +1,4 @@
-;;; tramp-stuff.el --- Tramp related config
+;;; tramp-stuff.el --- Tramp related config -*- lexical-binding: t; -*-
 ;;
 ;; Author:  Kiran Shenoy
 ;; URL:     https://github.com/kgs1992/.emacs.d/
