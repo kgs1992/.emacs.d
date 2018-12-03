@@ -78,16 +78,7 @@
   (set-face-attribute 'region nil
                       :background "blue"
                       :foreground "black")
-  (set-face-background 'hl-line "grey10")
-  (set-face-attribute 'magit-diff-hunk-heading nil
-                      :foreground "white")
-  (set-face-attribute 'magit-diff-hunk-heading-highlight nil
-                      :foreground "white"
-                      :background "grey10")
-  (set-face-attribute 'magit-diff-removed nil
-                      :background "black")
-  (set-face-attribute 'magit-diff-removed-highlight nil
-                      :background "black"))
+  (set-face-background 'hl-line "grey10"))
 
 ;; Apply theme config with frame context
 (defun apply-my-theme-to-frame (frame)
@@ -105,7 +96,7 @@
   :if (daemonp)
   :demand t
   :ensure t
-  :after (tabbar helm frame hl-line magit)
+  :after (tabbar helm frame hl-line)
   :config
   (add-hook 'after-make-frame-functions 'apply-my-theme-to-frame))
 
@@ -113,7 +104,7 @@
   :unless (daemonp)
   :demand t
   :ensure t
-  :after (tabbar helm frame hl-line magit)
+  :after (tabbar helm frame hl-line)
   :config
   (apply-my-theme))
 
