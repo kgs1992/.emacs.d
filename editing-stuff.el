@@ -18,7 +18,6 @@
 (delete-selection-mode 0)
 (transient-mark-mode 0)
 (setq-default wrap-lines t)
-(global-hl-line-mode t )
 
 ;; Auto refresh buffers
 (global-auto-revert-mode 1)
@@ -104,9 +103,6 @@
 
 ;; Show current function/class
 (which-function-mode 1)
-
-;; Toggle line highlighting in all buffers
-(global-hl-line-mode t)
 
 ;; Tab related stuff
 (setq-default indent-tabs-mode nil)

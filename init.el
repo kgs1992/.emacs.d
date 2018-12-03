@@ -49,7 +49,7 @@
 (load "~/.emacs.d/projectile-stuff.el")
 ;; (load "~/.emacs.d/grep-stuff.el")
 ;; (load "~/.emacs.d/tramp-stuff.el")
-;; (load "~/.emacs.d/magit-stuff.el")
+(load "~/.emacs.d/magit-stuff.el")
 ;; (load "~/.emacs.d/editing-stuff.el")
 (load "~/.emacs.d/tabbar-stuff.el")
 ;; (load "~/.emacs.d/modeline-stuff.el")
@@ -65,12 +65,7 @@
 
 
 ;; Theme related
-(if (daemonp)
-    (add-hook 'after-make-frame-functions
-              (lambda (frame)
-                (with-selected-frame frame
-                  (load "~/.emacs.d/theme-stuff.el"))))
-  (load "~/.emacs.d/theme-stuff.el"))
+(load "~/.emacs.d/theme-stuff.el")
 
 ;; Unbind C-z
 (if (daemonp)
