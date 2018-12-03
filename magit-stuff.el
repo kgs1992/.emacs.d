@@ -69,7 +69,7 @@
   :bind (:map magit-status-mode-map
               ("q". #'magit-quit-session))
   :bind* (("C-x g" . magit-status))
-  :hook (projectile-mode-hook . magit-mode))
+  :hook (projectile-mode . magit-mode))
 
 ;; Git gutter
 (use-package git-gutter-fringe+

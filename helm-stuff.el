@@ -13,7 +13,7 @@
 ;; Session
 (use-package session
   :ensure t
-  :hook (after-init-hook . session-initialize))
+  :hook (after-init . session-initialize))
 
 ;; Helm
 (use-package helm

@@ -30,7 +30,7 @@
 ;; Delete trailing whitespaces
 (use-package whitespace
   :ensure t
-  :hook (before-save-hook . delete-trailing-whitespace))
+  :hook (before-save . delete-trailing-whitespace))
 
 ;;Set backup dir
 (setq auto-save-directory-fallback "~/.saves")
@@ -44,7 +44,7 @@
 ;; Rainbow delimiters - Match parens
 (use-package rainbow-delimiters
   :ensure t
-  :hook (prog-mode-hook . #'rainbow-delimiters-mode)
+  :hook (prog-mode . rainbow-delimiters-mode)
   :config
   (show-paren-mode 1)
   (setq show-paren-style 'expression))
@@ -79,7 +79,7 @@
   (setq nlinum-format "%d\u2502")
   (dolist (mode '(column-number-mode line-number-mode))
     (when (fboundp mode) (funcall mode t)))
-  :hook ((text-mode-hook prog-mode-hook) . nlinum-mode))
+  :hook ((text-mode prog-mode) . nlinum-mode))
 
 ;; ;; Show current function/class
 ;; (which-function-mode 1)
@@ -110,11 +110,12 @@
       (-when-let (buffer (get-buffer flycheck-error-list-buffer))
         (dolist (window (get-buffer-window-list buffer))
           (quit-window nil window)))))
-  :hook ((after-init-hook . global-flycheck-mode)
-         (before-save-hook . #'flycheck-list-errors-only-when-errors)))
+  :hook ((after-init . global-flycheck-mode)
+         (before-save . #'flycheck-list-errors-only-when-errors)))
 
 (use-package format-all
-  :hook (prog-mode-hook . #'format-all-mode))
+  :ensure t
+  :hook (prog-mode . format-all-mode))
 
 ;; ;; easy-kill
 ;; (el-get-bundle leoliu/easy-kill)
