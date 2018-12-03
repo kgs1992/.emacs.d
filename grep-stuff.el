@@ -10,23 +10,23 @@
 ;;;
 
 ;;; Code:
-;; wgrep - Edit and save grep buffers
-(el-get-bundle wgrep)
-(require 'wgrep)
-
 ;; ripgrep - Super fast grep
-(el-get-bundle s)
-(el-get-bundle names)
-(el-get-bundle dajva/rg.el)
-(require 'rg)
+(use-package rg
+  :ensure t
+  :after (projectile)
+  :config
+  (defun ripgrep ()
+    "Use rg-project if within a project context."
+    (interactive
+     (if (projectile-project-p)
+         (call-interactively 'rg-project)
+       (call-interactively 'rg))))
+  :bind (("M-s" . ripgrep)))
 
-(defun ripgrep ()
-  "Use rg-project if within a project context."
-  (interactive
-   (if (projectile-project-p)
-       (call-interactively 'rg-project)
-     (call-interactively 'rg))))
-(global-set-key (kbd "M-s") 'ripgrep)
+;; wgrep - Edit and save grep buffers
+(use-package wgrep
+  :ensure t
+  :after (rg))
 
 (provide 'grep-stuff)
 ;;; grep-stuff.el ends here

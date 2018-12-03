@@ -20,20 +20,20 @@
 ;; Projectile
 (use-package projectile
   :ensure t
+  :demand t
   :config
   (projectile-mode 1)
+  (setq projectile-completion-system 'helm)
   (setq projectile-enable-caching t)
   (setq projectile-mode-line '(:eval (format " [%s]" (projectile-project-name))))
   :bind-keymap
   ("C-c p" . projectile-command-map))
 
-(setq projectile-completion-system 'helm)
-
 ;; Helm Projectile
 (use-package helm-projectile
   :ensure t
   :demand t
-  :after helm projectile
+  :after (helm helm-for-files projectile)
   :config
   (helm-projectile-on)
   (setq projectile-switch-project-action 'helm-projectile)

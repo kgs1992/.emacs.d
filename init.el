@@ -47,12 +47,12 @@
 
 (load "~/.emacs.d/helm-stuff.el")
 (load "~/.emacs.d/projectile-stuff.el")
-;; (load "~/.emacs.d/grep-stuff.el")
-;; (load "~/.emacs.d/tramp-stuff.el")
+(load "~/.emacs.d/grep-stuff.el")
+(load "~/.emacs.d/tramp-stuff.el")
 (load "~/.emacs.d/magit-stuff.el")
 (load "~/.emacs.d/editing-stuff.el")
 (load "~/.emacs.d/tabbar-stuff.el")
-;; (load "~/.emacs.d/modeline-stuff.el")
+(load "~/.emacs.d/modeline-stuff.el")
 
 ;; ;; PYTHON RELATED
 ;; (load "~/.emacs.d/python-stuff.el")
