@@ -54,11 +54,11 @@
 (load "~/.emacs.d/tabbar-stuff.el")
 (load "~/.emacs.d/modeline-stuff.el")
 
-;; ;; PYTHON RELATED
-;; (load "~/.emacs.d/python-stuff.el")
+;; PYTHON RELATED
+(load "~/.emacs.d/python-stuff.el")
 
-;; ;; GO RELATED
-;; (load "~/.emacs.d/go-stuff.el")
+;; GO RELATED
+(load "~/.emacs.d/go-stuff.el")
 
 ;; ;; JSX RELATED
 ;; (load "~/.emacs.d/jsx-stuff.el")
