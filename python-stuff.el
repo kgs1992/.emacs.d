@@ -21,6 +21,7 @@
 (use-package auto-virtualenvwrapper
   :ensure t
   :defer t
+  :after (virtualenvwrapper)
   :hook (python-mode . #'auto-virtualenvwrapper-activate))
 
 ;; Default indent
