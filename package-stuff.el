@@ -10,25 +10,19 @@
 ;;;
 
 ;;; Code:
-;; El-get
-(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
-(unless (require 'el-get nil 'noerror)
-  (with-current-buffer
-      (url-retrieve-synchronously
-       "https://raw.githubusercontent.com/dimitri/el-get/master/el-get-install.el")
-    (goto-char (point-max))
-    (eval-print-last-sexp)))
-
-(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
-
-;; Package sources
+;; Package config & init
 (require 'package)
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("elpa" . "http://tromey.com/elpa/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("melpa" . "http://stable.melpa.org/packages/")))
-
+(setq package--init-file-ensured t ; Don't modify init
+      package-archives '(("melpa" . "http://melpa.org/packages/")
+                         ("gnu" . "http://elpa.gnu.org/packages/")))
 (package-initialize)
+
+;; Ensure we have use-package
+(dolist (package '(use-package))
+  (unless (package-installed-p package)
+    (package-refresh-contents)
+    (package-install package)))
+(require 'use-package)
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/local-packages"))
 
