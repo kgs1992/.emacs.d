@@ -13,7 +13,7 @@
 ;; Tabbar
 (use-package tabbar
   :ensure t
-  :demand t
+  :commands (fix-tabbar-colors-for-frame tabbar-mode)
   :config
   (tabbar-mode t)
 
@@ -38,7 +38,54 @@
       )))
   (setq tabbar-separator (quote (" | "))
         tabbar-buffer-groups-function 'tabbar-buffer-groups)
+
+  (defun fix-tabbar-colors()
+    "Fix the colors for tabbar."
+    (set-face-attribute
+     'tabbar-default nil
+     :background "black"
+     :foreground "black"
+     :box '(:line-width 1 :color "gray20" :style nil))
+    (set-face-attribute
+     'tabbar-unselected nil
+     :background "gray30"
+     :foreground "white"
+     :box '(:line-width 1 :color "gray30" :style nil))
+    (set-face-attribute
+     'tabbar-selected nil
+     :background "bright black"
+     :foreground "orange" ;;"#A41F99"
+     :box '(:line-width 1 :color "gray75" :style nil))
+    (set-face-attribute
+     'tabbar-highlight nil
+     :background "white"
+     :foreground "black"
+     :underline nil
+     :box '(:line-width 1 :color "white" :style nil))
+    (set-face-attribute
+     'tabbar-button nil
+     :box '(:line-width 1 :color "gray20" :style nil))
+    (set-face-attribute
+     'tabbar-separator nil
+     :background "black"
+     :height 0.1))
+
+  (defun fix-tabbar-colors-for-frame(frame)
+    "Fix the colors for tabbar for selected frame.
+    FRAME: Frame to change attributes of"
+    (with-selected-frame frame
+	  (fix-tabbar-colors)))
+
+  (unless (daemonp)
+    (fix-tabbar-colors))
+
   :bind (("M-," . 'tabbar-backward-tab)
          ("M-." . 'tabbar-forward-tab)))
+
+(if (daemonp)
+	(add-hook 'after-make-frame-functions #'fix-tabbar-colors-for-frame))
+
+(add-hook 'after-init-hook #'tabbar-mode)
+
 (provide 'tabbar-stuff)
 ;;; tabbar-stuff.el ends here

@@ -14,6 +14,7 @@
 (use-package magit
   :ensure t
   :defer t
+  :commands (fix-magit-colors-for-frame)
   :config
   (setq magit-last-seen-setup-instructions "1.4.0")
   (setq magit-buffer-name-format "*%x%M%v: %t%x*")
@@ -56,20 +57,33 @@
     (interactive)
     (custom/kill-buffers "^\\*magit.*\\*")
     (jump-to-register :magit-fullscreen))
-  (set-face-attribute 'magit-diff-hunk-heading nil
-                      :foreground "white")
-  (set-face-attribute 'magit-diff-hunk-heading-highlight nil
-                      :foreground "white"
-                      :background "grey10")
-  (set-face-attribute 'magit-diff-removed nil
-                      :background "black")
-  (set-face-attribute 'magit-diff-removed-highlight nil
-                      :background "black")
+
+  (defun fix-magit-colors()
+    "Fix the colors for magit diffs."
+    (set-face-attribute 'magit-diff-hunk-heading nil
+                        :foreground "white")
+    (set-face-attribute 'magit-diff-hunk-heading-highlight nil
+                        :foreground "white"
+                        :background "grey10")
+    (set-face-attribute 'magit-diff-removed nil
+                        :background "black")
+    (set-face-attribute 'magit-diff-removed-highlight nil
+                        :background "black"))
+
+  (defun fix-magit-colors-for-frame(frame)
+    "Fix the colors for magit diffs for selected frame."
+    (with-selected-frame frame
+      (fix-magit-colors)))
+
+  (unless (daemonp)
+    (fix-magit-colors))
 
   :bind (:map magit-status-mode-map
               ("q". #'magit-quit-session))
-  :bind* (("C-x g" . magit-status))
-  :hook (projectile-mode . magit-mode))
+  :bind* (("C-x g" . magit-status)))
+
+(if (daemonp)
+	(add-hook 'after-make-frame-functions #'fix-magit-colors-for-frame))
 
 ;; Git gutter
 (use-package git-gutter-fringe+
