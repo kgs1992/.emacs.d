@@ -13,7 +13,7 @@
 ;; Tabbar
 (use-package tabbar
   :ensure t
-  :commands (fix-tabbar-colors-for-frame tabbar-mode)
+  :commands (fix-tabbar-colors-for-frame)
   :config
   (tabbar-mode t)
 
@@ -80,12 +80,11 @@
     (fix-tabbar-colors))
 
   :bind (("M-," . 'tabbar-backward-tab)
-         ("M-." . 'tabbar-forward-tab)))
+         ("M-." . 'tabbar-forward-tab))
+  :hook (after-init . tabbar-mode))
 
 (if (daemonp)
 	(add-hook 'after-make-frame-functions #'fix-tabbar-colors-for-frame))
-
-(add-hook 'after-init-hook #'tabbar-mode)
 
 (provide 'tabbar-stuff)
 ;;; tabbar-stuff.el ends here

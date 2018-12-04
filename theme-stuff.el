@@ -13,7 +13,7 @@
 ;; Doom themes
 (use-package doom-themes
   :ensure t
-  :commands (apply-my-theme-to-frame apply-my-theme)
+  :commands (apply-my-theme-to-frame)
   :defer t
   :config
   ;; Apply theme and custom faces
@@ -51,11 +51,11 @@
 
   (defun apply-my-theme-to-frame (frame)
     (with-selected-frame frame
-      (apply-my-theme))))
+      (apply-my-theme)))
+  :hook (after-init . apply-my-theme))
 
 (if (daemonp)
-	(add-hook 'after-make-frame-functions #'apply-my-theme-to-frame)
-  (add-hook 'after-init-hook #'apply-my-theme))
+	(add-hook 'after-make-frame-functions #'apply-my-theme-to-frame))
 
 (provide 'theme-stuff)
 ;;; theme-stuff.el ends here
