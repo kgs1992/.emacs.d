@@ -14,12 +14,9 @@
   :ensure t
   :defer t
   :config
-  (defun flycheck-go-setup ()
-    (flycheck-mode))
   (defun my-go-mode-hook ()
     ;; Calling go-fmt before save is done by format-all
     ;; (add-hook 'before-save-hook 'gofmt-before-save)
-    (add-hook 'go-mode-hook #'flycheck-go-setup)
     (local-set-key (kbd "C-z") 'godef-jump))
   :hook (go-mode . my-go-mode-hook))
 

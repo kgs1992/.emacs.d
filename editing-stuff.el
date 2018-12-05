@@ -117,7 +117,7 @@
         (dolist (window (get-buffer-window-list buffer))
           (quit-window nil window)))))
   :hook ((after-init . global-flycheck-mode)
-         (before-save . #'flycheck-list-errors-only-when-errors)))
+         (before-save . flycheck-list-errors-only-when-errors)))
 
 (use-package format-all
   :ensure t
