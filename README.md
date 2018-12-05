@@ -15,3 +15,10 @@ For more information about these matters, see the file named COPYING.
 ```
 --with-x-toolkit=no --with-xpm=no --with-jpeg=no --with-png=no --with-gif=no --with-tiff=no --with-gnutls
 ```
+
+### Installation:
+```
+git clone git@github.com:kgs1992/.emacs.d.git ~/.emacs.d
+cd ~/.emacs.d
+make
+```
