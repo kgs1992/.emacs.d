@@ -10,12 +10,10 @@
 ;;;
 
 ;;; Code:
-;; Flycheck (lint)
 (use-package go-mode
   :ensure t
   :defer t
   :config
-  (add-to-list 'load-path (getenv "GOPATH"))
   (defun flycheck-go-setup ()
     (flycheck-mode))
   (defun my-go-mode-hook ()
@@ -24,6 +22,14 @@
     (add-hook 'go-mode-hook #'flycheck-go-setup)
     (local-set-key (kbd "C-z") 'godef-jump))
   :hook (go-mode . my-go-mode-hook))
+
+(use-package company-go
+  :ensure t
+  :defer t
+  :after (company)
+  :hook (go-mode . (lambda ()
+                     (set (make-local-variable 'company-backends) '(company-go))
+                     (company-mode))))
 
 (provide 'go-stuff)
 ;;; go-stuff.el ends here

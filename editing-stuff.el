@@ -49,18 +49,24 @@
   (show-paren-mode 1)
   (setq show-paren-style 'expression))
 
-;; Autocomplete
-(use-package auto-complete
+;; Autocomplete - company
+(use-package company
   :ensure t
-  :config
-  (ac-config-default)
-  (setq
-   ac-auto-show-menu 1
-   ac-auto-start t
-   ac-menu-height 20
-   ac-delay 0.01
-   )
-  (global-auto-complete-mode t))
+  :hook (after-init . global-company-mode))
+
+;; Autocomplete - ac
+;; (use-package auto-complete
+;;   :ensure t
+;;   :config
+;;   ;; (ac-config-default)
+;;   ;; (ac-flyspell-workaround)
+;;   ;; (setq
+;;   ;;  ac-auto-show-menu 1
+;;   ;;  ac-auto-start t
+;;   ;;  ac-menu-height 20
+;;   ;;  ac-delay 0.01
+;;   ;;  )
+;;   (global-auto-complete-mode t))
 
 
 ;; Swiper (better C-s)

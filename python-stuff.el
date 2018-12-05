@@ -36,5 +36,12 @@
   (setq jedi:complete-on-dot t)
   :hook (python-mode . jedi:setup))
 
+;; Company mode
+(use-package company-jedi
+  :ensure t
+  :defer t
+  :after (jedi company helm-company)
+  :hook (python-mode . (lambda () (add-to-list 'company-backends 'company-jedi))))
+
 (provide 'python-stuff)
 ;;; python-stuff.el ends here
