@@ -42,6 +42,7 @@
 
   :bind (("M-x" . 'helm-M-x)
          ("C-x f" . 'helm-for-files)
+         ("C-x b" . 'helm-buffers-list)
          ("C-x C-f" . 'helm-find-files)
          ("M-DEL" . 'helm-find-files-up-one-level)))
 
