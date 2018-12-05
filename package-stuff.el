@@ -26,5 +26,14 @@
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/local-packages"))
 
+;; Auto update packages
+(use-package auto-package-update
+  :ensure t
+  :demand t
+  :config
+  (setq auto-package-update-delete-old-versions t
+        auto-package-update-interval 30)
+  (auto-package-update-maybe))
+
 (provide 'package-stuff)
 ;;; package-stuff.el ends here

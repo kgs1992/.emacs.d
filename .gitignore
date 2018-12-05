@@ -9,3 +9,5 @@ projectile-bookmarks.eld
 recentf
 projectile.cache
 custom-stuff.el
+async-bytecomp.log
+.last-package-update-day
