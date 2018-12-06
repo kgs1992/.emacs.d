@@ -1,5 +1,9 @@
 # .emacs.d
 
+### Screenshots
+[![Screenshot](/screenshots/latest.png)](/screenshots)
+`emacsclient` run through [kitty](https://github.com/kovidgoyal/kitty) (https://sw.kovidgoyal.net/kitty/)
+
 ### Emacs version:
 ```
 › emacs --version                                                                                                                                                             
