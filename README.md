@@ -1,12 +1,14 @@
 # .emacs.d
 
 ### Screenshots
-[![Screenshot](/screenshots/latest.png)](/screenshots)
+[![Screenshot](/screenshots/latest_graphical.png)](/screenshots)
+======
+[![Screenshot](/screenshots/latest_emacs_client.png)](/screenshots)
 `emacsclient` run through [kitty](https://github.com/kovidgoyal/kitty) (https://sw.kovidgoyal.net/kitty/)
 
 ### Emacs version:
 ```
-› emacs --version                                                                                                                                                             
+› emacs --version
 GNU Emacs 26.1
 Copyright (C) 2018 Free Software Foundation, Inc.
 GNU Emacs comes with ABSOLUTELY NO WARRANTY.
