@@ -12,6 +12,8 @@
 ;;; Code:
 ;; Fullscreen
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
+(add-to-list 'default-frame-alist '(ns-appearance . dark))
+(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
 
 ;; Speed up startup
 (defvar old--file-name-handler-alist file-name-handler-alist)
