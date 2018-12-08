@@ -64,7 +64,7 @@
     (set-face-attribute
      'tabbar-selected nil
      :background "gray50"
-     :foreground "orange"
+     :foreground "#ecbe7b"
      :box '(:line-width 1 :color "gray30" :style nil))
     (set-face-attribute
      'tabbar-highlight nil

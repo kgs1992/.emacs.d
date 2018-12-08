@@ -10,6 +10,9 @@
 ;;;
 
 ;;; Code:
+;; Fullscreen
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+
 ;; Speed up startup
 (defvar old--file-name-handler-alist file-name-handler-alist)
 (setq gc-cons-threshold 402653184      ; Increase memory threshold

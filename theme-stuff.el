@@ -47,7 +47,7 @@
 
     ;; Misc colours
     (set-face-attribute 'region nil
-                        :background "blue"
+                        :background "#51afef"
                         :foreground "black")
     (set-face-background 'hl-line "grey10"))
 
