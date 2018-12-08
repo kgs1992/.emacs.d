@@ -3,7 +3,7 @@
 ### Screenshots
 [![Screenshot](/screenshots/latest_graphical.png)](/screenshots)
 ======
-[![Screenshot](/screenshots/latest_emacs_client.png)](/screenshots)
+[![Screenshot](/screenshots/latest_emacsclient.png)](/screenshots)
 `emacsclient` run through [kitty](https://github.com/kovidgoyal/kitty) (https://sw.kovidgoyal.net/kitty/)
 
 ### Emacs version:
