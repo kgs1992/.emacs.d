@@ -45,9 +45,9 @@
 ;; Neotree
 (use-package neotree
   :ensure t
-  :after (projectile)
+  :after (projectile doom-themes)
   :config
-
+  (setq neo-theme 'icons)
   ;; Neotree theme
   (doom-themes-neotree-config)
 
