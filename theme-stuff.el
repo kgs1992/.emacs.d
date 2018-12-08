@@ -23,6 +23,7 @@
     ;; Disable Menubars and Toolbars
     (menu-bar-mode -1)
     (tool-bar-mode -1)
+    (toggle-scroll-bar -1)
 
     ;; Highlisht current line
     (global-hl-line-mode t)
@@ -39,6 +40,7 @@
           doom-themes-enable-italic t)
     ;; Enable flashing mode-line on errors
     (doom-themes-visual-bell-config)
+
     ;; Load the theme (doom-one, doom-molokai, etc); keep in mind that each theme
     ;; may have their own settings.
     (load-theme 'doom-one t)

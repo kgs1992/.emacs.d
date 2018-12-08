@@ -33,7 +33,7 @@
 (use-package helm-projectile
   :ensure t
   :demand t
-  :after (helm helm-for-files projectile)
+  :after (helm helm-for-files projectile doom-themes)
   :config
   (helm-projectile-on)
   (setq projectile-switch-project-action 'helm-projectile)
@@ -47,6 +47,10 @@
   :ensure t
   :after (projectile)
   :config
+
+  ;; Neotree theme
+  (doom-themes-neotree-config)
+
   ;; NeoTree can be opened (toggled) at projectile project root
   (defun neotree-project-dir ()
     "Open NeoTree using the git root."
