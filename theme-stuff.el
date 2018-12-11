@@ -47,9 +47,9 @@
 
     ;; Misc colours
     (set-face-attribute 'region nil
-                        :background "#51afef"
+                        :background "#21242b"
                         :foreground "black")
-    (set-face-background 'hl-line "grey10"))
+    (set-face-background 'hl-line "#21242b"))
 
   (defun apply-my-theme-to-frame (frame)
     (with-selected-frame frame

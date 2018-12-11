@@ -11,3 +11,4 @@ projectile.cache
 custom-stuff.el
 async-bytecomp.log
 .last-package-update-day
+.python-environments

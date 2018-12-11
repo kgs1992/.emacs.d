@@ -53,34 +53,34 @@
     "Fix the colors for tabbar."
     (set-face-attribute
      'tabbar-default nil
-     :background "gray20"
-     :foreground "gray20"
-     :box '(:line-width 1 :color "gray20" :style nil))
+     :background "#1B2229"
+     :foreground "#1B2229"
+     :box '(:line-width 1 :color "#1B2229" :style nil))
     (set-face-attribute
      'tabbar-unselected nil
-     :background "gray30"
-     :foreground "white"
-     :box '(:line-width 1 :color "gray30" :style nil))
+     :background "#3f444a"
+     :foreground "#bbc2cf"
+     :box '(:line-width 1 :color "#3f444a" :style nil))
     (set-face-attribute
      'tabbar-selected nil
-     :background "gray50"
-     :foreground "#ecbe7b"
-     :box '(:line-width 1 :color "gray30" :style nil))
+     :background "#73797e"
+     :foreground "#dd8844"
+     :box '(:line-width 1 :color "#3f444a" :style nil))
     (set-face-attribute
      'tabbar-highlight nil
      :background "white"
      :foreground "black"
      :underline nil
-     :box '(:line-width 1 :color "white" :style nil))
+     :box '(:line-width 1 :color "#73797e" :style nil))
     (set-face-attribute
      'tabbar-button nil
-     :background "gray20"
+     :background "#1B2229"
      :foreground "white"
-     :box '(:line-width 1 :color "gray20" :style nil))
+     :box '(:line-width 1 :color "#1B2229" :style nil))
     (set-face-attribute
      'tabbar-separator nil
-     :background "gray20"
-     :foreground "gray20"
+     :background "#1B2229"
+     :foreground "#1B2229"
      :height 0.1))
 
   (defun fix-tabbar-colors-for-frame(frame)

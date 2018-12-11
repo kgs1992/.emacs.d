@@ -25,10 +25,10 @@
   (defun fix-helm-colors()
     "Fix the colors for helm."
     (set-face-attribute 'helm-selection nil
-			            :background "grey10"
+			            :background "#202328"
 			            :foreground "#51afef")
     (set-face-attribute 'helm-source-header nil
-			            :background "gray30"
+			            :background "#21242b"
 			            :foreground "#98be65"))
 
   (defun fix-helm-colors-for-frame(frame)
