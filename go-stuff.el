@@ -17,7 +17,8 @@
   (defun my-go-mode-hook ()
     ;; Calling go-fmt before save is done by format-all
     ;; (add-hook 'before-save-hook 'gofmt-before-save)
-    (local-set-key (kbd "C-z") 'godef-jump))
+    (local-set-key (kbd "C-c .") 'godef-jump)
+    (local-set-key (kbd "C-c ,") 'pop-global-mark))
   :hook (go-mode . my-go-mode-hook))
 
 (use-package company-go
