@@ -52,6 +52,12 @@
 ;; Autocomplete - company
 (use-package company
   :ensure t
+  :config
+  (setq company-tooltip-limit 20)                      ; Bigger popup window
+  (setq company-idle-delay .3)                         ; Decrease delay before autocompletion popup shows
+  (setq company-echo-delay 0)                          ; Remove annoying blinking
+  (setq company-auto-complete-chars 2)                 ; Start autocompletion after number of chars
+  (setq company-begin-commands '(self-insert-command)) ; Start autocompletion only after typing
   :hook (after-init . global-company-mode))
 
 ;; Autocomplete - ac
