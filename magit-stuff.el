@@ -14,6 +14,7 @@
 (use-package magit
   :ensure t
   :defer t
+  :after (flyspell)
   :commands (fix-magit-colors-for-frame)
   :config
   (setq magit-last-seen-setup-instructions "1.4.0")
@@ -77,6 +78,8 @@
 
   (unless (daemonp)
     (fix-magit-colors))
+
+  :hook (git-commit-setup . git-commit-turn-on-flyspell)
 
   :bind (:map magit-status-mode-map
               ("q". #'magit-quit-session))

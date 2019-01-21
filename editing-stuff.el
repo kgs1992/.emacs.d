@@ -29,8 +29,13 @@
 
 ;; Delete trailing whitespaces
 (use-package whitespace
-  :ensure t
   :hook (before-save . delete-trailing-whitespace))
+
+;; Turn on spell check
+(use-package flyspell
+  :defer t
+  :hook ((text-mode . flyspell-mode)
+         (prog-mode . flyspell-prog-mode)))
 
 ;;Set backup dir
 (setq auto-save-directory-fallback "~/.saves")
