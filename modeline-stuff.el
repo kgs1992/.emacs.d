@@ -15,7 +15,7 @@
   :ensure t
   :demand t
   :config
-  (doom-modeline-init)
+  (setq doom-modeline-icon t)
   (setq doom-modeline-buffer-file-name-style 'relative-to-project)
   ;; Cleanup the modeline
   ;; source: https://www.masteringemacs.org/article/hiding-replacing-modeline-strings
@@ -54,8 +54,8 @@ want to use in the modeline *in lieu of* the original.")
                   (when (eq mode major-mode)
                     (setq mode-name mode-str)))))
 
-
-  (add-hook 'after-change-major-mode-hook 'clean-mode-line))
+  :hook ((after-init . doom-modeline-mode)
+         (after-change-major-mode . clean-mode-line)))
 
 (provide 'modeline-stuff)
 ;;; modeline-stuff.el ends here
