@@ -10,10 +10,24 @@
 ;;;
 
 ;;; Code:
-;; Fullscreen
+;; Use UTF-8
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
+
+;; Frame customization
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
-(add-to-list 'default-frame-alist '(ns-appearance . dark))
-(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+
+(defun set-mac-defaults ()
+  "Set defaults for the for macOS."
+  (add-to-list 'default-frame-alist '(ns-appearance . dark))
+  (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+  (add-to-list 'default-frame-alist '(font . "Fira Code Retina"))
+  (setq mac-option-modifier 'meta)
+  )
+
+(if (eq system-type 'darwin)
+    (set-mac-defaults))
 
 ;; Speed up startup
 (defvar old--file-name-handler-alist file-name-handler-alist)
