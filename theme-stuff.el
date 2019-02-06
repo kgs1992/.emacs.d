@@ -56,6 +56,11 @@
       (apply-my-theme)))
   :hook (after-init . apply-my-theme))
 
+(use-package fira-code-mode
+  :load-path "local-packages"
+  :commands (fira-code-mode)
+  :hook (prog-mode . fira-code-mode))
+
 (if (daemonp)
 	(add-hook 'after-make-frame-functions #'apply-my-theme-to-frame))
 
