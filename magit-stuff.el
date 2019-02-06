@@ -87,13 +87,13 @@
 
   (setq pretty-magit-alist nil)
   (setq pretty-magit-prompt nil)
-  (pretty-magit "Feature" ? '(:foreground "slate gray" :height 1.0 :family "FontAwesome"))
-  (pretty-magit "Add" ? '(:foreground "#375E97" :height 1.0 :family "FontAwesome"))
-  (pretty-magit "Fix" ? '(:foreground "#FB6542" :height 1.0 :family "FontAwesome"))
-  (pretty-magit "Clean" ? '(:foreground "#FFBB00" :height 1.0 :family "FontAwesome"))
-  (pretty-magit "Docs" ? '(:foreground "#3F681C" :height 1.0 :family "FontAwesome"))
-  (pretty-magit "master" ? '(:box nil :height 1.0 :family "github-octicons") t)
-  (pretty-magit "origin" ? '(:box nil :height 1.0 :family "github-octicons") t)
+  (pretty-magit "Feature" "" '(:foreground "slate gray" :height 1.0 :family "FontAwesome"))
+  (pretty-magit "Add" "" '(:foreground "#375E97" :height 1.0 :family "FontAwesome"))
+  (pretty-magit "Fix" "" '(:foreground "#FB6542" :height 1.0 :family "FontAwesome"))
+  (pretty-magit "Clean" "" '(:foreground "#FFBB00" :height 1.0 :family "FontAwesome"))
+  (pretty-magit "Docs" "" '(:foreground "#3F681C" :height 1.0 :family "FontAwesome"))
+  (pretty-magit "master" "" '(:box nil :height 1.0 :family "github-octicons") t)
+  (pretty-magit "origin" "" '(:box nil :height 1.0 :family "github-octicons") t)
 
   (defun add-magit-faces ()
     "Add face properties and compose symbols for buffer from pretty-magit."
@@ -110,7 +110,7 @@
                 (add-face-text-property
                  (match-beginning 1) (match-end 1) props))))))))
 
-  (advice-add 'magit-status :after 'add-magit-faces)
+  ;; (advice-add 'magit-status :after 'add-magit-faces)
   (advice-add 'magit-refresh-buffer :after 'add-magit-faces)
 
   (unless (daemonp)
