@@ -19,7 +19,7 @@
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 (defun set-mac-defaults ()
-  "Set defaults for the for macOS."
+  "Set defaults for macOS."
   (add-to-list 'default-frame-alist '(ns-appearance . dark))
   (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
   (add-to-list 'default-frame-alist '(font . "Fira Code Retina"))
@@ -33,7 +33,7 @@
 (defvar old--file-name-handler-alist file-name-handler-alist)
 (setq gc-cons-threshold 402653184      ; Increase memory threshold
       gc-cons-percentage 0.6           ; for garbage collection.
-      file-name-handler-alist nil)      ; Unset file handlers
+      file-name-handler-alist nil)     ; Unset file handlers
 
 ;; Set custom file
 (setq custom-file "~/.emacs.d/custom-stuff.el")
