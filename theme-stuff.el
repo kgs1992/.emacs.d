@@ -59,6 +59,8 @@
 (use-package fira-code-mode
   :load-path "local-packages"
   :commands (fira-code-mode)
+  :config
+  (setq fira-code-mode--only-ligatures t)
   :hook (prog-mode . fira-code-mode))
 
 (if (daemonp)

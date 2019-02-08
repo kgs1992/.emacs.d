@@ -45,11 +45,16 @@
     "x" ":" "+" "+" "*"))
 
 (defvar fira-code-mode--old-prettify-alist)
+(defvar fira-code-mode--only-ligatures nil
+  "Only use prettify-symbols for ligatures.
+This will drop the `prettify-symbols-alist` defined by other modes on the buffer.")
 
 (defun fira-code-mode--enable ()
   "Enable Fira Code ligatures in current buffer."
   (setq-local fira-code-mode--old-prettify-alist prettify-symbols-alist)
-  (setq-local prettify-symbols-alist (append (fira-code-mode--make-alist fira-code-mode--ligatures) fira-code-mode--old-prettify-alist))
+  (if fira-code-mode--only-ligatures
+      (setq-local prettify-symbols-alist (fira-code-mode--make-alist fira-code-mode--ligatures))
+    (setq-local prettify-symbols-alist (append (fira-code-mode--make-alist fira-code-mode--ligatures) fira-code-mode--old-prettify-alist)))
   (prettify-symbols-mode t))
 
 (defun fira-code-mode--disable ()
