@@ -22,7 +22,9 @@
   :ensure t
   :defer t
   :after (virtualenvwrapper)
-  :hook (python-mode . #'auto-virtualenvwrapper-activate))
+  :hook ((python-mode . #'auto-virtualenvwrapper-activate)
+         (window-configuration-change . 'auto-virtualenv-set-virtualenv)
+         (focus-in . 'auto-virtualenv-set-virtualenv)))
 
 ;; Default indent
 (setq python-indent-offset 4)
