@@ -55,6 +55,7 @@ want to use in the modeline *in lieu of* the original.")
   :config
   (setq doom-modeline-buffer-file-name-style 'relative-to-project)
   :hook ((after-init . doom-modeline-mode)
+         (find-file . (lambda () (if (not doom-modeline-icon) (setq doom-modeline-icon t))))
          (after-change-major-mode . clean-mode-line)))
 
 (message "Loaded modeline-stuff.el")
