@@ -66,5 +66,6 @@
 (if (daemonp)
 	(add-hook 'after-make-frame-functions #'apply-my-theme-to-frame))
 
+(message "Loaded theme-stuff.el")
 (provide 'theme-stuff)
 ;;; theme-stuff.el ends here

@@ -28,5 +28,6 @@
   :ensure t
   :after (rg))
 
+(message "Loaded grep-stuff.el")
 (provide 'grep-stuff)
 ;;; grep-stuff.el ends here

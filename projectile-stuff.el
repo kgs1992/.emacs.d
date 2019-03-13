@@ -66,5 +66,6 @@
         (message "Could not find git project root."))))
   :bind   (("C-c C-p" . neotree-project-dir)))
 
+(message "Loaded projectile-stuff.el")
 (provide 'projectile-stuff)
 ;;; projectile-stuff.el ends here

@@ -49,5 +49,6 @@
 (if (daemonp)
 	(add-hook 'after-make-frame-functions #'fix-helm-colors-for-frame))
 
+(message "Loaded helm-stuff.el")
 (provide 'helm-stuff)
 ;;; helm-stuff.el ends here

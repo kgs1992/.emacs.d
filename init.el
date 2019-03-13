@@ -98,5 +98,6 @@
                            gc-cons-percentage 0.1
                            file-name-handler-alist old--file-name-handler-alist)))
 
+(message "Loaded init.el")
 (provide 'init)
 ;;; init.el ends here

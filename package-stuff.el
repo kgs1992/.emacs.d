@@ -35,5 +35,6 @@
         auto-package-update-interval 30)
   (auto-package-update-maybe))
 
+(message "Loaded package-stuff.el")
 (provide 'package-stuff)
 ;;; package-stuff.el ends here

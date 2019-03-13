@@ -20,5 +20,6 @@
         `((".*" ,temporary-file-directory t)))
   (setq tramp-backup-directory-alist backup-directory-alist))
 
+(message "Loaded tramp-stuff.el")
 (provide 'tramp-stuff)
 ;;; tramp-stuff.el ends here

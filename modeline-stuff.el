@@ -57,5 +57,6 @@ want to use in the modeline *in lieu of* the original.")
   :hook ((after-init . doom-modeline-mode)
          (after-change-major-mode . clean-mode-line)))
 
+(message "Loaded modeline-stuff.el")
 (provide 'modeline-stuff)
 ;;; modeline-stuff.el ends here

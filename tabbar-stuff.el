@@ -99,5 +99,6 @@
 (if (daemonp)
 	(add-hook 'after-make-frame-functions #'fix-tabbar-colors-for-frame))
 
+(message "Loaded tabbar-stuff.el")
 (provide 'tabbar-stuff)
 ;;; tabbar-stuff.el ends here

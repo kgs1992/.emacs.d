@@ -133,5 +133,6 @@
   :bind (("M-p" . 'git-gutter+-previous-hunk)
          ("M-n" . 'git-gutter+-next-hunk)))
 
+(message "Loaded magit-stuff.el")
 (provide 'magit-stuff)
 ;;; magit-stuff.el ends here

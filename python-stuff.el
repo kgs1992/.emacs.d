@@ -71,5 +71,6 @@
                                                   (yapfify-region (region-beginning) (region-end))))
                                             nil 'local))))
 
+(message "Loaded python-stuff.el")
 (provide 'python-stuff)
 ;;; python-stuff.el ends here

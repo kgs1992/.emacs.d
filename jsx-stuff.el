@@ -46,5 +46,6 @@
 
 (add-to-list 'auto-mode-alist '(".*\.js\'" . 'rjsx-mode))
 
+(message "Loaded jsx-stuff.el")
 (provide 'jsx-stuff)
 ;;; jsx-stuff.el ends here

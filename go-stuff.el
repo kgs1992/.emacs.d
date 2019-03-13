@@ -29,5 +29,6 @@
                      (set (make-local-variable 'company-backends) '(company-go))
                      (company-mode))))
 
+(message "Loaded go-stuff.el")
 (provide 'go-stuff)
 ;;; go-stuff.el ends here

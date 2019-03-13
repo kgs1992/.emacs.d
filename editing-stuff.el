@@ -139,5 +139,6 @@
 ;; (require 'easy-kill)
 ;; (global-set-key [remap kill-ring-save] 'easy-kill)
 
+(message "Loaded editing-stuff.el")
 (provide 'editing-stuff)
 ;;; editing-stuff.el ends here
