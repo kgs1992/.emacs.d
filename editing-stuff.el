@@ -134,6 +134,12 @@
   :ensure t
   :hook (prog-mode . format-all-mode))
 
+;; Buffer expose - Visual buffer switching
+(use-package buffer-expose
+  :ensure t
+  :bind ("C-x C-b" . buffer-expose-no-stars)
+  :hook (after-init . buffer-expose-mode))
+
 ;; ;; easy-kill
 ;; (el-get-bundle leoliu/easy-kill)
 ;; (require 'easy-kill)
