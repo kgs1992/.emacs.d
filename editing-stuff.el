@@ -112,6 +112,13 @@
   :bind (("C--" . undo-only)
          ("M--" . 'undo-tree-redo)))
 
+;; Symbol highlighting
+(use-package symbol-overlay
+  :ensure t
+  :hook (prog-mode . (lambda ()
+                       (symbol-overlay-mode)
+                       (setq symbol-overlay-scope t))))
+
 ;; Backward delete word instead of kill
 (use-package evil
   :ensure t
