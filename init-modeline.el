@@ -1,4 +1,4 @@
-;;; modeline-stuff.el --- Modeline related config -*- lexical-binding: t; -*-
+;;; init-modeline.el --- Modeline related config -*- lexical-binding: t; -*-
 ;;
 ;; Author:  Kiran Shenoy
 ;; URL:     https://github.com/kgs1992/.emacs.d/
@@ -58,6 +58,6 @@ want to use in the modeline *in lieu of* the original.")
          (find-file . (lambda () (if (not doom-modeline-icon) (setq doom-modeline-icon t))))
          (after-change-major-mode . clean-mode-line)))
 
-(message "Loaded modeline-stuff.el")
-(provide 'modeline-stuff)
-;;; modeline-stuff.el ends here
+(message "Loaded init-modeline.el")
+(provide 'init-modeline)
+;;; init-modeline.el ends here

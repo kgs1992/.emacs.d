@@ -5,10 +5,12 @@ el-get/
 elpa/
 eshell/
 url/
+transient/
 projectile-bookmarks.eld
 recentf
 projectile.cache
 custom-stuff.el
+init-custom.el
 async-bytecomp.log
 .last-package-update-day
 .python-environments

@@ -1,4 +1,4 @@
-;;; tramp-stuff.el --- Tramp related config -*- lexical-binding: t; -*-
+;;; init-tramp.el --- Tramp related config -*- lexical-binding: t; -*-
 ;;
 ;; Author:  Kiran Shenoy
 ;; URL:     https://github.com/kgs1992/.emacs.d/
@@ -20,6 +20,6 @@
         `((".*" ,temporary-file-directory t)))
   (setq tramp-backup-directory-alist backup-directory-alist))
 
-(message "Loaded tramp-stuff.el")
-(provide 'tramp-stuff)
-;;; tramp-stuff.el ends here
+(message "Loaded init-tramp.el")
+(provide 'init-tramp)
+;;; init-tramp.el ends here

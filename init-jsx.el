@@ -1,4 +1,4 @@
-;;; jsx-stuff.el --- JSX related config -*- lexical-binding: t; -*-
+;;; init-jsx.el --- JSX related config -*- lexical-binding: t; -*-
 ;;
 ;; Author:  Kiran Shenoy
 ;; URL:     https://github.com/kgs1992/.emacs.d/
@@ -46,6 +46,6 @@
 
 (add-to-list 'auto-mode-alist '(".*\.js\'" . 'rjsx-mode))
 
-(message "Loaded jsx-stuff.el")
-(provide 'jsx-stuff)
-;;; jsx-stuff.el ends here
+(message "Loaded init-jsx.el")
+(provide 'init-jsx)
+;;; init-jsx.el ends here

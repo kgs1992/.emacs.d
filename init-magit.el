@@ -1,4 +1,4 @@
-;;; magit-stuff.el --- Magit related config -*- lexical-binding: t; -*-
+;;; init-magit.el --- Magit related config -*- lexical-binding: t; -*-
 ;;
 ;; Author:  Kiran Shenoy
 ;; URL:     https://github.com/kgs1992/.emacs.d/
@@ -10,7 +10,7 @@
 ;;;
 
 ;;; Code:
-;; Magit stuff
+;; Magit config
 (use-package magit
   :ensure t
   :defer t
@@ -133,6 +133,6 @@
   :bind (("M-p" . 'git-gutter+-previous-hunk)
          ("M-n" . 'git-gutter+-next-hunk)))
 
-(message "Loaded magit-stuff.el")
-(provide 'magit-stuff)
-;;; magit-stuff.el ends here
+(message "Loaded init-magit.el")
+(provide 'init-magit)
+;;; init-magit.el ends here

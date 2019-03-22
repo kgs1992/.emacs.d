@@ -1,4 +1,4 @@
-;;; python-stuff.el --- Python related config -*- lexical-binding: t; -*-
+;;; init-python.el --- Python related config -*- lexical-binding: t; -*-
 ;;
 ;; Author:  Kiran Shenoy
 ;; URL:     https://github.com/kgs1992/.emacs.d/
@@ -71,6 +71,6 @@
                                                   (yapfify-region (region-beginning) (region-end))))
                                             nil 'local))))
 
-(message "Loaded python-stuff.el")
-(provide 'python-stuff)
-;;; python-stuff.el ends here
+(message "Loaded init-python.el")
+(provide 'init-python)
+;;; init-python.el ends here

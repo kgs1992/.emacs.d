@@ -13,7 +13,7 @@
 ;; Package and compile related
 (setq load-prefer-newer t)
 ;; Init package
-(load "~/.emacs.d/package-stuff.el")
+(load "~/.emacs.d/init-package.el")
 
 (require 'package)
 (require 'auto-package-update)

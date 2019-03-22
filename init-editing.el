@@ -1,4 +1,4 @@
-;;; editing-stuff.el --- Editor related config
+;;; init-editing.el --- Editor related config
 ;;
 ;; Author:  Kiran Shenoy
 ;; URL:     https://github.com/kgs1992/.emacs.d/
@@ -10,7 +10,7 @@
 ;;;
 
 ;;; Code:
-;; General purpose stuff to make editing more peaceful
+;; General purpose config to make editing more peaceful
 (setq inhibit-startup-screen t)
 (setq debug-on-quit nil)
 (setq message-log-max 2000)
@@ -101,7 +101,7 @@
 ;; ;; Show current function/class
 ;; (which-function-mode 1)
 
-;; Tab related stuff
+;; Tab/spacing
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 (setq indent-line-function 'insert-tab)
@@ -152,6 +152,6 @@
 ;; (require 'easy-kill)
 ;; (global-set-key [remap kill-ring-save] 'easy-kill)
 
-(message "Loaded editing-stuff.el")
-(provide 'editing-stuff)
-;;; editing-stuff.el ends here
+(message "Loaded init-editing.el")
+(provide 'init-editing)
+;;; init-editing.el ends here

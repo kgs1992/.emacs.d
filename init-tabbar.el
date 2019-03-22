@@ -1,4 +1,4 @@
-;;; tabbar-stuff.el --- Tabbar related config -*- lexical-binding: t; -*-
+;;; init-tabbar.el --- Tabbar related config -*- lexical-binding: t; -*-
 ;;
 ;; Author:  Kiran Shenoy
 ;; URL:     https://github.com/kgs1992/.emacs.d/
@@ -99,6 +99,6 @@
 (if (daemonp)
 	(add-hook 'after-make-frame-functions #'fix-tabbar-colors-for-frame))
 
-(message "Loaded tabbar-stuff.el")
-(provide 'tabbar-stuff)
-;;; tabbar-stuff.el ends here
+(message "Loaded init-tabbar.el")
+(provide 'init-tabbar)
+;;; init-tabbar.el ends here

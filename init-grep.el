@@ -1,4 +1,4 @@
-;;; grep-stuff.el --- Searching related config -*- lexical-binding: t; -*-
+;;; init-grep.el --- Searching related config -*- lexical-binding: t; -*-
 ;;
 ;; Author:  Kiran Shenoy
 ;; URL:     https://github.com/kgs1992/.emacs.d/
@@ -28,6 +28,6 @@
   :ensure t
   :after (rg))
 
-(message "Loaded grep-stuff.el")
-(provide 'grep-stuff)
-;;; grep-stuff.el ends here
+(message "Loaded init-grep.el")
+(provide 'init-grep)
+;;; init-grep.el ends here

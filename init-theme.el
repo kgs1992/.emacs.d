@@ -1,4 +1,4 @@
-;;; theme-stuff.el --- Theming related config -*- lexical-binding: t; -*-
+;;; init-theme.el --- Theming related config -*- lexical-binding: t; -*-
 ;;
 ;; Author:  Kiran Shenoy
 ;; URL:     https://github.com/kgs1992/.emacs.d/
@@ -66,6 +66,6 @@
 (if (daemonp)
 	(add-hook 'after-make-frame-functions #'apply-my-theme-to-frame))
 
-(message "Loaded theme-stuff.el")
-(provide 'theme-stuff)
-;;; theme-stuff.el ends here
+(message "Loaded init-theme.el")
+(provide 'init-theme)
+;;; init-theme.el ends here

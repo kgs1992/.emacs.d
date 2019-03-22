@@ -1,4 +1,4 @@
-;;; package-stuff.el --- Package related config -*- lexical-binding: t; -*-
+;;; init-package.el --- Package related config -*- lexical-binding: t; -*-
 ;;
 ;; Author:  Kiran Shenoy
 ;; URL:     https://github.com/kgs1992/.emacs.d/
@@ -35,6 +35,6 @@
         auto-package-update-interval 30)
   (auto-package-update-maybe))
 
-(message "Loaded package-stuff.el")
-(provide 'package-stuff)
-;;; package-stuff.el ends here
+(message "Loaded init-package.el")
+(provide 'init-package)
+;;; init-package.el ends here

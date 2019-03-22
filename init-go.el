@@ -1,4 +1,4 @@
-;;; go-stuff.el --- Golang related config  -*- lexical-binding: t; -*-
+;;; init-go.el --- Golang related config  -*- lexical-binding: t; -*-
 ;;
 ;; Author:  Kiran Shenoy
 ;; URL:     https://github.com/kgs1992/.emacs.d/
@@ -29,6 +29,6 @@
                      (set (make-local-variable 'company-backends) '(company-go))
                      (company-mode))))
 
-(message "Loaded go-stuff.el")
-(provide 'go-stuff)
-;;; go-stuff.el ends here
+(message "Loaded init-go.el")
+(provide 'init-go)
+;;; init-go.el ends here

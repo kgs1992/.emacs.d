@@ -36,12 +36,12 @@
       file-name-handler-alist nil)     ; Unset file handlers
 
 ;; Set custom file
-(setq custom-file "~/.emacs.d/custom-stuff.el")
+(setq custom-file "~/.emacs.d/init-custom.el")
 
 ;; Package and compile related
 (setq load-prefer-newer t)
 ;; Init package
-(load "~/.emacs.d/package-stuff.el")
+(load "~/.emacs.d/init-package.el")
 
 ;; Auto compile all
 (use-package auto-compile
@@ -64,27 +64,27 @@
 ;;;; Configure useful emacs extensions
 
 
-(load "~/.emacs.d/helm-stuff.el")
-(load "~/.emacs.d/projectile-stuff.el")
-(load "~/.emacs.d/grep-stuff.el")
-(load "~/.emacs.d/tramp-stuff.el")
-(load "~/.emacs.d/magit-stuff.el")
-(load "~/.emacs.d/editing-stuff.el")
-;; (load "~/.emacs.d/tabbar-stuff.el")
-(load "~/.emacs.d/modeline-stuff.el")
+(load "~/.emacs.d/init-helm.el")
+(load "~/.emacs.d/init-projectile.el")
+(load "~/.emacs.d/init-grep.el")
+(load "~/.emacs.d/init-tramp.el")
+(load "~/.emacs.d/init-magit.el")
+(load "~/.emacs.d/init-editing.el")
+;; (load "~/.emacs.d/init-tabbar.el")
+(load "~/.emacs.d/init-modeline.el")
 
 ;; PYTHON RELATED
-(load "~/.emacs.d/python-stuff.el")
+(load "~/.emacs.d/init-python.el")
 
 ;; GO RELATED
-(load "~/.emacs.d/go-stuff.el")
+(load "~/.emacs.d/init-go.el")
 
 ;; JSX RELATED
-(load "~/.emacs.d/jsx-stuff.el")
+(load "~/.emacs.d/init-jsx.el")
 
 
 ;; Theme related
-(load "~/.emacs.d/theme-stuff.el")
+(load "~/.emacs.d/init-theme.el")
 
 ;; Unbind C-z
 (if (daemonp)

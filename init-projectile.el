@@ -1,4 +1,4 @@
-;;; projectile-stuff.el --- Projectile related config -*- lexical-binding: t; -*-
+;;; init-projectile.el --- Projectile related config -*- lexical-binding: t; -*-
 ;;
 ;; Author:  Kiran Shenoy
 ;; URL:     https://github.com/kgs1992/.emacs.d/
@@ -66,6 +66,6 @@
         (message "Could not find git project root."))))
   :bind   (("C-c C-p" . neotree-project-dir)))
 
-(message "Loaded projectile-stuff.el")
-(provide 'projectile-stuff)
-;;; projectile-stuff.el ends here
+(message "Loaded init-projectile.el")
+(provide 'init-projectile)
+;;; init-projectile.el ends here
