@@ -13,6 +13,7 @@
 ;; Session
 (use-package session
   :ensure t
+  :defer t
   :hook (after-init . session-initialize))
 
 ;; Helm
@@ -21,7 +22,6 @@
   :defer t
   :commands (fix-helm-colors-for-frame)
   :config
-  (helm-mode 1)
   (defun fix-helm-colors()
     "Fix the colors for helm."
     (set-face-attribute 'helm-selection nil
@@ -44,7 +44,8 @@
          ("C-x f" . 'helm-for-files)
          ("C-x b" . 'helm-buffers-list)
          ("C-x C-f" . 'helm-find-files)
-         ("M-DEL" . 'helm-find-files-up-one-level)))
+         ("M-DEL" . 'helm-find-files-up-one-level))
+  :hook (after-init . helm-mode))
 
 (if (daemonp)
 	(add-hook 'after-make-frame-functions #'fix-helm-colors-for-frame))

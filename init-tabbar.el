@@ -13,6 +13,7 @@
 ;; Tabbar
 (use-package tabbar
   :ensure t
+  :defer t
   :commands (fix-tabbar-colors-for-frame)
   :config
   (tabbar-mode t)

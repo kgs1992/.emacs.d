@@ -128,6 +128,7 @@
 ;; Git gutter
 (use-package git-gutter-fringe+
   :ensure t
+  :defer t
   :config
   (global-git-gutter+-mode)
   :bind (("M-p" . 'git-gutter+-previous-hunk)

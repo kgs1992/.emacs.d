@@ -58,6 +58,7 @@
 
 (use-package fira-code-mode
   :load-path "local-packages"
+  :defer t
   :commands (fira-code-mode)
   :config
   (setq fira-code-mode--only-ligatures t)

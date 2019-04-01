@@ -29,6 +29,7 @@
 
 ;; Delete trailing whitespaces
 (use-package whitespace
+  :defer t
   :hook (before-save . delete-trailing-whitespace))
 
 ;; Turn on spell check
@@ -49,6 +50,7 @@
 ;; Rainbow delimiters - Match parens
 (use-package rainbow-delimiters
   :ensure t
+  :defer t
   :hook (prog-mode . rainbow-delimiters-mode)
   :config
   (show-paren-mode 1)
@@ -57,6 +59,7 @@
 ;; Autocomplete - company
 (use-package company
   :ensure t
+  :defer t
   :config
   (setq company-tooltip-limit 20)                      ; Bigger popup window
   (setq company-idle-delay .3)                         ; Decrease delay before autocompletion popup shows
@@ -68,6 +71,7 @@
 ;; Autocomplete - ac
 ;; (use-package auto-complete
 ;;   :ensure t
+;;   :defer t
 ;;   :config
 ;;   ;; (ac-config-default)
 ;;   ;; (ac-flyspell-workaround)
@@ -83,6 +87,7 @@
 ;; Swiper (better C-s)
 (use-package swiper-helm
   :ensure t
+  :defer t
   :after (helm)
   :bind (("C-s" . swiper-helm)))
 
@@ -92,6 +97,7 @@
 ;; Show column number and line number
 (use-package nlinum
   :ensure t
+  :defer t
   :config
   (setq nlinum-format "%d\u2502")
   (dolist (mode '(column-number-mode line-number-mode))
@@ -109,12 +115,14 @@
 ;; Undo-redo keybindings
 (use-package undo-tree
   :ensure t
+  :defer t
   :bind (("C--" . undo-only)
          ("M--" . 'undo-tree-redo)))
 
 ;; Symbol highlighting
 (use-package symbol-overlay
   :ensure t
+  :defer t
   :hook (prog-mode . (lambda ()
                        (symbol-overlay-mode)
                        (setq symbol-overlay-scope t))))
@@ -122,10 +130,12 @@
 ;; Backward delete word instead of kill
 (use-package evil
   :ensure t
+  :defer t
   :bind (("M-DEL" . evil-delete-backward-word)))
 
 (use-package flycheck
   :ensure t
+  :defer t
   :config
   (defun flycheck-list-errors-only-when-errors ()
     "Show buffer with flycheck error."
@@ -139,18 +149,15 @@
 
 (use-package format-all
   :ensure t
+  :defer t
   :hook (prog-mode . format-all-mode))
 
 ;; Buffer expose - Visual buffer switching
 (use-package buffer-expose
   :ensure t
+  :defer t
   :bind ("C-x C-b" . buffer-expose-no-stars)
   :hook (after-init . buffer-expose-mode))
-
-;; ;; easy-kill
-;; (el-get-bundle leoliu/easy-kill)
-;; (require 'easy-kill)
-;; (global-set-key [remap kill-ring-save] 'easy-kill)
 
 (message "Loaded init-editing.el")
 (provide 'init-editing)

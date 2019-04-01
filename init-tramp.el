@@ -12,6 +12,7 @@
 ;;; Code:
 ;; Tramp for remote editing
 (use-package tramp
+  :defer t
   :config
   (setq tramp-default-method "sshx")
   (setq backup-directory-alist

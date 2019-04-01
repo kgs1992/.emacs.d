@@ -12,39 +12,41 @@
 ;;; Code:
 ;; Recent files
 (use-package recentf
+  :defer t
   :config
-  (recentf-mode 1)
   (setq recentf-max-saved-items 500)
-  (setq recentf-max-menu-items 60))
+  (setq recentf-max-menu-items 60)
+  :hook (after-init . recentf-mode))
 
 ;; Projectile
 (use-package projectile
   :ensure t
-  :demand t
+  :defer t
   :config
-  (projectile-mode 1)
   (setq projectile-completion-system 'helm)
   (setq projectile-enable-caching t)
   (setq projectile-mode-line '(:eval (format " [%s]" (projectile-project-name))))
   :bind-keymap
-  ("C-c p" . projectile-command-map))
+  ("C-c p" . projectile-command-map)
+  :hook (after-init . projectile-mode))
 
 ;; Helm Projectile
 (use-package helm-projectile
   :ensure t
-  :demand t
-  :after (helm helm-for-files projectile doom-themes)
+  :defer t
+  :after (helm projectile doom-themes)
   :config
-  (helm-projectile-on)
   (setq projectile-switch-project-action 'helm-projectile)
   (add-to-list 'helm-for-files-preferred-list helm-source-projectile-projects)
   (add-to-list 'helm-for-files-preferred-list helm-source-projectile-files-list)
-  (add-to-list 'helm-for-files-preferred-list helm-source-projectile-directories-list)
-  (setq helm-find-file-ignore-thing-at-point t))
+  ;; (add-to-list 'helm-for-files-preferred-list helm-source-projectile-directories-list)
+  (setq helm-find-file-ignore-thing-at-point t)
+  :hook (helm-after-initialize . helm-projectile-on))
 
 ;; Neotree
 (use-package neotree
   :ensure t
+  :defer t
   :after (projectile doom-themes)
   :config
   (setq neo-theme 'icons)

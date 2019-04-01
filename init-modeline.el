@@ -13,7 +13,7 @@
 ;;doom-modeline
 (use-package doom-modeline
   :ensure t
-  :demand t
+  :defer t
   :init
   ;; Cleanup the modeline
   ;; source: https://www.masteringemacs.org/article/hiding-replacing-modeline-strings
