@@ -11,30 +11,18 @@
 
 ;;; Code:
 ;; Virtualenv related
-(use-package virtualenvwrapper
-  :ensure t
-  :defer t
-  :config
-  (setq venv-location (expand-file-name "~/.virtualenvs"))
-  (setq python-environment-directory venv-location))
-
 (use-package auto-virtualenvwrapper
   :ensure t
   :defer t
-  :after (virtualenvwrapper)
-  :hook ((python-mode . #'auto-virtualenvwrapper-activate)
-         (window-configuration-change . 'auto-virtualenv-set-virtualenv)
-         (focus-in . 'auto-virtualenv-set-virtualenv)))
-
-;; Default indent
-(setq python-indent-offset 4)
+  :hook ((python-mode . auto-virtualenvwrapper-activate)
+         (window-configuration-change . auto-virtualenvwrapper-activate)
+         (focus-in . auto-virtualenvwrapper-activate)))
 
 ;; Jedi
 (use-package jedi
   :ensure t
   :defer t
   :config
-  (setq jedi:setup-keys t)
   (setq jedi:complete-on-dot t)
   :hook (python-mode . jedi:setup))
 
