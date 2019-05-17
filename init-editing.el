@@ -159,6 +159,15 @@
   :bind ("C-x C-b" . buffer-expose-no-stars)
   :hook (after-init . buffer-expose-mode))
 
+;; Text scaling
+(use-package default-text-scale
+  :ensure t
+  :defer t
+  :bind (("s-=" . default-text-scale-increase)
+         ("s--" . default-text-scale-decrease)
+         ("s-0" . default-text-scale-reset))
+ )
+
 (message "Loaded init-editing.el")
 (provide 'init-editing)
 ;;; init-editing.el ends here
