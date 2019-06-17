@@ -68,6 +68,11 @@
   (setq company-begin-commands '(self-insert-command)) ; Start autocompletion only after typing
   :hook (after-init . global-company-mode))
 
+(use-package helm-company
+  :ensure t
+  :defer t
+  :after (helm))
+
 ;; Autocomplete - ac
 ;; (use-package auto-complete
 ;;   :ensure t
