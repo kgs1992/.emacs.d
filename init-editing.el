@@ -68,10 +68,10 @@
   (setq company-begin-commands '(self-insert-command)) ; Start autocompletion only after typing
   :hook (after-init . global-company-mode))
 
-(use-package helm-company
-  :ensure t
-  :defer t
-  :after (helm))
+;; (use-package helm-company
+;;   :ensure t
+;;   :defer t
+;;   :after (helm))
 
 ;; Autocomplete - ac
 ;; (use-package auto-complete
@@ -90,11 +90,16 @@
 
 
 ;; Swiper (better C-s)
-(use-package swiper-helm
+(use-package swiper
   :ensure t
   :defer t
-  :after (helm)
-  :bind (("C-s" . swiper-helm)))
+  :after (ivy)
+  :bind (("C-s" . swiper)))
+;; (use-package swiper-helm
+;;   :ensure t
+;;   :defer t
+;;   :after (helm)
+;;   :bind (("C-s" . swiper-helm)))
 
 ;; Commenting
 (global-set-key (kbd "M-;") 'comment-or-uncomment-region)
@@ -152,10 +157,10 @@
   :hook ((after-init . global-flycheck-mode)
          (before-save . flycheck-list-errors-only-when-errors)))
 
-(use-package format-all
-  :ensure t
-  :defer t
-  :hook (prog-mode . format-all-mode))
+;; (use-package format-all
+;;   :ensure t
+;;   :defer t
+;;   :hook (prog-mode . format-all-mode))
 
 ;; Buffer expose - Visual buffer switching
 (use-package buffer-expose
@@ -171,7 +176,7 @@
   :bind (("s-=" . default-text-scale-increase)
          ("s--" . default-text-scale-decrease)
          ("s-0" . default-text-scale-reset))
- )
+  )
 
 (message "Loaded init-editing.el")
 (provide 'init-editing)

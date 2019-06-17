@@ -64,7 +64,8 @@
 ;;;; Configure useful emacs extensions
 
 
-(load "~/.emacs.d/init-helm.el")
+;; (load "~/.emacs.d/init-helm.el")
+(load "~/.emacs.d/init-ivy.el")
 (load "~/.emacs.d/init-projectile.el")
 (load "~/.emacs.d/init-grep.el")
 (load "~/.emacs.d/init-tramp.el")
