@@ -131,8 +131,8 @@
   :defer t
   :config
   (global-git-gutter+-mode)
-  :bind (("M-p" . 'git-gutter+-previous-hunk)
-         ("M-n" . 'git-gutter+-next-hunk)))
+  :bind (("M-p" . git-gutter+-previous-hunk)
+         ("M-n" . git-gutter+-next-hunk)))
 
 (message "Loaded init-magit.el")
 (provide 'init-magit)
