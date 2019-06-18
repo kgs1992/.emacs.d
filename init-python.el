@@ -30,7 +30,7 @@
 (use-package company-jedi
   :ensure t
   :defer t
-  :after (jedi company helm-company)
+  :after (jedi company)
   :hook (python-mode . (lambda () (add-to-list 'company-backends 'company-jedi))))
 
 ;; Python formatytting

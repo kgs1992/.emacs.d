@@ -24,7 +24,8 @@
       (eldoc-mode . "")
       (abbrev-mode . "")
       (smartparens-mode . "")
-      (helm-mode . "")
+      (ivy-mode . "")
+      (counsel-mode . "")
       (auto-revert-mode . "")
       (flycheck-mode . "FC")
       ;; Major modes

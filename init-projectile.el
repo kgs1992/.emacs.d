@@ -30,18 +30,13 @@
   ("C-c p" . projectile-command-map)
   :hook (after-init . projectile-mode))
 
-;; ;; Helm Projectile
-;; (use-package helm-projectile
-;;   :ensure t
-;;   :defer t
-;;   :after (helm projectile doom-themes)
-;;   :config
-;;   (setq projectile-switch-project-action 'helm-projectile)
-;;   (add-to-list 'helm-for-files-preferred-list helm-source-projectile-projects)
-;;   (add-to-list 'helm-for-files-preferred-list helm-source-projectile-files-list)
-;;   ;; (add-to-list 'helm-for-files-preferred-list helm-source-projectile-directories-list)
-;;   (setq helm-find-file-ignore-thing-at-point t)
-;;   :hook (helm-after-initialize . helm-projectile-on))
+;; Counsel projectile
+(use-package counsel-projectile
+  :ensure t
+  :defer t
+  :after (counsel projectile)
+  :hook (after-init . counsel-projectile-mode)
+  :bind ("C-x f" . counsel-projectile-find-file-dwim))
 
 ;; Neotree
 (use-package neotree
