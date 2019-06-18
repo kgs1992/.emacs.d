@@ -14,9 +14,14 @@
 (use-package auto-virtualenvwrapper
   :ensure t
   :defer t
-  :hook ((python-mode . auto-virtualenvwrapper-activate)
-         (window-configuration-change . auto-virtualenvwrapper-activate)
-         (focus-in . auto-virtualenvwrapper-activate)))
+  :config
+  (defun activate-if-python-mode ()
+      (if (eq (with-current-buffer (current-buffer)
+                major-mode) 'python-mode)
+          (auto-virtualenvwrapper-activate)))
+  :hook ((python-mode . activate-if-python-mode)
+         (window-configuration-change . activate-if-python-mode)
+         (focus-in . activate-if-python-mode)))
 
 ;; Jedi
 (use-package jedi
