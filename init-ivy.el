@@ -27,9 +27,6 @@
   :hook ((after-init . ivy-mode)
          (ivy-mode . counsel-mode)))
 
-(if (daemonp)
-	(add-hook 'after-make-frame-functions #'fix-ivy-colors-for-frame))
-
 (message "Loaded init-ivy.el")
 (provide 'init-ivy)
 ;;; init-ivy.el ends here
