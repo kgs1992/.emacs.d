@@ -14,3 +14,4 @@ init-custom.el
 async-bytecomp.log
 .last-package-update-day
 .python-environments
+smex-items
