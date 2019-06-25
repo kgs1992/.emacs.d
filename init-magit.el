@@ -129,10 +129,9 @@
 (use-package git-gutter-fringe+
   :ensure t
   :defer t
-  :config
-  (global-git-gutter+-mode)
   :bind (("M-p" . git-gutter+-previous-hunk)
-         ("M-n" . git-gutter+-next-hunk)))
+         ("M-n" . git-gutter+-next-hunk))
+  :hook (after-init . global-git-gutter+-mode))
 
 (message "Loaded init-magit.el")
 (provide 'init-magit)
