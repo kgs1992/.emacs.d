@@ -131,7 +131,10 @@
   :defer t
   :bind (("M-p" . git-gutter+-previous-hunk)
          ("M-n" . git-gutter+-next-hunk))
-  :hook (after-init . global-git-gutter+-mode))
+  :config
+  (setq git-gutter-fr+-side 'right-fringe)
+  :hook ((after-init . (lambda () (require 'git-gutter-fringe+)))
+         (after-init . global-git-gutter+-mode)))
 
 (message "Loaded init-magit.el")
 (provide 'init-magit)
