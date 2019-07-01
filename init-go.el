@@ -25,9 +25,11 @@
   :ensure t
   :defer t
   :after (company)
+  :config
+  (setq company-go-show-annotation t)
   :hook (go-mode . (lambda ()
                      (set (make-local-variable 'company-backends) '(company-go))
-                     (company-mode))))
+                     (company-mode 1))))
 
 (message "Loaded init-go.el")
 (provide 'init-go)

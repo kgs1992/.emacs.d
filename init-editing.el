@@ -66,6 +66,7 @@
   (setq company-echo-delay 0)                          ; Remove annoying blinking
   (setq company-auto-complete-chars 2)                 ; Start autocompletion after number of chars
   (setq company-begin-commands '(self-insert-command)) ; Start autocompletion only after typing
+  (setq company-tooltip-align-annotations t)
   :hook (after-init . global-company-mode))
 
 ;; Autocomplete - ac

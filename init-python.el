@@ -24,18 +24,19 @@
          (focus-in . activate-if-python-mode)))
 
 ;; Jedi
-(use-package jedi
+(use-package jedi-core
   :ensure t
   :defer t
-  :config
-  (setq jedi:complete-on-dot t)
+  ;; :config
+  ;; (setq jedi:complete-on-dot nil)
+  ;; (setq jedi:tooltip-method nil)
   :hook (python-mode . jedi:setup))
 
 ;; Company mode
 (use-package company-jedi
   :ensure t
   :defer t
-  :after (jedi company)
+  :after (company)
   :hook (python-mode . (lambda () (add-to-list 'company-backends 'company-jedi))))
 
 ;; Python formatytting
