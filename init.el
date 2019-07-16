@@ -38,6 +38,9 @@
 ;; Set custom file
 (setq custom-file "~/.emacs.d/init-custom.el")
 
+;; Suppress redefinition warnings
+(setq ad-redefinition-action 'accept)
+
 ;; Package and compile related
 (setq load-prefer-newer t)
 ;; Init package
