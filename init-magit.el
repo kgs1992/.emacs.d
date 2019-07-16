@@ -126,15 +126,37 @@
 	(add-hook 'after-make-frame-functions #'fix-magit-colors-for-frame))
 
 ;; Git gutter
-(use-package git-gutter-fringe+
+(use-package git-gutter
   :ensure t
   :defer t
-  :bind (("M-p" . git-gutter+-previous-hunk)
-         ("M-n" . git-gutter+-next-hunk))
   :config
-  (setq git-gutter-fr+-side 'right-fringe)
-  :hook ((after-init . (lambda () (require 'git-gutter-fringe+)))
-         (after-init . global-git-gutter+-mode)))
+  (setq git-gutter:disabled-modes '(org-mode asm-mode image-mode)
+        git-gutter:window-width 2)
+  :bind (("M-p" . git-gutter:previous-hunk)
+         ("M-n" . git-gutter:next-hunk))
+  :hook (after-init . global-git-gutter-mode))
+
+(use-package git-gutter-fringe
+  :ensure t
+  :after git-gutter
+  :demand fringe-helper
+  :config
+  (setq-default fringes-outside-margins t)
+  ;; subtle diff indicators in the fringe
+  ;; places the git gutter outside the margins.
+
+  ;; thin fringe bitmaps
+  (define-fringe-bitmap 'git-gutter-fr:added
+  [224 224 224 224 224 224 224 224 224 224 224 224 224 224 224 224 224 224 224 224 224 224 224 224 224]
+  nil nil 'center)
+  (define-fringe-bitmap 'git-gutter-fr:modified
+  [224 224 224 224 224 224 224 224 224 224 224 224 224 224 224 224 224 224 224 224 224 224 224 224 224]
+  nil nil 'center)
+  (define-fringe-bitmap 'git-gutter-fr:deleted
+  [0 0 0 0 0 0 0 0 0 0 0 0 0 128 192 224 240 248]
+  nil nil 'center)
+  ;; (setq git-gutter-fr+-side 'right-fringe)
+)
 
 (message "Loaded init-magit.el")
 (provide 'init-magit)
