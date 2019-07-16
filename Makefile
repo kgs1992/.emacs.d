@@ -3,7 +3,19 @@ EMACS=`which  emacs`
 all: install
 
 install:
-	$(EMACS) --script init.el
+	@echo ":::: Installing packages ::::"
+	@$(EMACS) --script init.el
+	@echo
 
-update: install
-	$(EMACS) --script update.el
+update_git:
+	@echo ":::: Updating init files ::::"
+	@git fetch
+	@git pull origin master
+	@echo
+
+update_packages:
+	@echo ":::: Updating packages ::::"
+	@$(EMACS) --script update.el
+	@echo
+
+update: update_git install update_packages
