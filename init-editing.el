@@ -105,7 +105,8 @@
   :ensure t
   :defer t
   :config
-  (setq nlinum-format "%d\u2502")
+  (setq nlinum-format "%d\u2502"
+        nlinum-highlight-current-line t)
   (dolist (mode '(column-number-mode line-number-mode))
     (when (fboundp mode) (funcall mode t)))
   :hook ((text-mode prog-mode) . nlinum-mode))

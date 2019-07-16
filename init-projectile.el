@@ -25,7 +25,7 @@
   :config
   (setq projectile-completion-system 'ivy)
   (setq projectile-enable-caching t)
-  (setq projectile-mode-line '(:eval (format " [%s]" (projectile-project-name))))
+  (setq projectile-mode-line-function (lambda () (format " [%s]" (projectile-project-name))))
   :bind-keymap
   ("C-c p" . projectile-command-map)
   :hook (after-init . projectile-mode))
