@@ -1,3 +1,4 @@
+.DS_Store
 auto-save-list/
 .session
 ac-comphist.dat
@@ -15,3 +16,4 @@ async-bytecomp.log
 .last-package-update-day
 .python-environments
 smex-items
+.cache/
