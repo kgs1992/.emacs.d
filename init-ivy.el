@@ -27,7 +27,8 @@
   :ensure t
   :defer t
   :config
-  (setq ivy-ignore-buffers '("\\` " "\\`\\*"))
+  (setq ivy-ignore-buffers '("\\` " "\\`\\*")
+        ivy-initial-inputs-alist nil)
   :bind (("C-x b" . ivy-switch-buffer))
   :hook (after-init . ivy-mode))
 
