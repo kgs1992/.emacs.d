@@ -69,6 +69,16 @@
   (setq company-tooltip-align-annotations t)
   :hook (after-init . global-company-mode))
 
+(use-package company-posframe
+  :ensure t
+  :defer t
+  :hook (after-init . company-posframe-mode))
+
+(use-package company-prescient
+  :ensure t
+  :defer t
+  :hook (after-init . company-prescient-mode))
+
 ;; Autocomplete - ac
 ;; (use-package auto-complete
 ;;   :ensure t
@@ -153,6 +163,11 @@
           (quit-window nil window)))))
   :hook ((after-init . global-flycheck-mode)
          (before-save . flycheck-list-errors-only-when-errors)))
+
+(use-package flycheck-posframe
+  :ensure t
+  :defer t
+  :hook (flycheck-mode . flycheck-posframe-mode))
 
 ;; (use-package format-all
 ;;   :ensure t
