@@ -24,7 +24,6 @@
 (use-package company-go
   :ensure t
   :defer t
-  :after (company)
   :config
   (setq company-go-show-annotation t)
   :hook (go-mode . (lambda ()

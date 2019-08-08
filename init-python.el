@@ -36,10 +36,10 @@
 (use-package company-jedi
   :ensure t
   :defer t
-  :after (company)
+  :after company
   :hook (python-mode . (lambda () (add-to-list 'company-backends 'company-jedi))))
 
-;; Python formatytting
+;; Python formatting
 (use-package yapfify
   :ensure t
   :defer t

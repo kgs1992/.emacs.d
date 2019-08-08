@@ -14,7 +14,7 @@
 (use-package rg
   :ensure t
   :defer t
-  :after (projectile)
+  :after projectile
   :config
   (defun ripgrep ()
     "Use rg-project if within a project context."
@@ -27,8 +27,7 @@
 ;; wgrep - Edit and save grep buffers
 (use-package wgrep
   :ensure t
-  :defer t
-  :after (rg))
+  :defer t)
 
 (message "Loaded init-grep.el")
 (provide 'init-grep)

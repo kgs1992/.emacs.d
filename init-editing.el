@@ -99,7 +99,7 @@
 (use-package swiper
   :ensure t
   :defer t
-  :after (ivy)
+  :after ivy
   :bind (("C-s" . swiper)))
 ;; (use-package swiper-helm
 ;;   :ensure t

@@ -34,7 +34,6 @@
 (use-package counsel-projectile
   :ensure t
   :defer t
-  :after (counsel projectile)
   :hook (after-init . counsel-projectile-mode)
   :bind ("C-x f" . counsel-projectile-find-file-dwim))
 

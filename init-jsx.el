@@ -14,7 +14,7 @@
 (use-package rjsx-mode
   :ensure t
   :defer t
-  :after (flycheck)
+  :after flycheck
   :config
   (defun my-jsx-mode-hook()
     (setq indent-tabs-mode nil) ;;Use space instead of tab
