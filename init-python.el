@@ -21,7 +21,7 @@
           (auto-virtualenvwrapper-activate)))
   :hook ((python-mode . activate-if-python-mode)
          (window-configuration-change . activate-if-python-mode)
-         (focus-in . activate-if-python-mode)))
+         (after-focus . activate-if-python-mode)))
 
 ;; Jedi
 (use-package jedi-core
