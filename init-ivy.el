@@ -29,7 +29,8 @@
   :config
   (setq ivy-ignore-buffers '("\\` " "\\`\\*")
         ivy-initial-inputs-alist nil)
-  :bind (("C-x b" . ivy-switch-buffer))
+  :bind (("C-x b" . ivy-switch-buffer)
+         (:map ivy-minibuffer-map ("TAB" . ivy-partial)))
   :hook (after-init . ivy-mode))
 
 (use-package counsel
