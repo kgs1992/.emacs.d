@@ -348,7 +348,7 @@
   :defer t
   :config
   (setq ivy-posframe-display-functions-alist
-        '((swiper          . ivy-posframe-display-at-window-bottom-left)
+        '((swiper          . nil)
           (complete-symbol . ivy-posframe-display-at-point)
           (t               . ivy-posframe-display-at-window-center)))
   (setq ivy-posframe-parameters
