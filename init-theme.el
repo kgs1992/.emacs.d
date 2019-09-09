@@ -55,9 +55,12 @@
                         :foreground "black")
     (set-face-background 'hl-line "#21242b"))
 
-  (defun apply-my-theme-to-frame (frame)
-    (with-selected-frame frame
-      (apply-my-theme)))
+  (if (daemonp)
+	  (add-hook 'after-make-frame-functions
+                (lambda (frame)
+                  (with-selected-frame frame
+                    (apply-my-theme)))))
+
   :hook (after-init . apply-my-theme))
 
 (use-package fira-code-mode
@@ -67,9 +70,6 @@
   :config
   (setq fira-code-mode--only-ligatures t)
   :hook (prog-mode . fira-code-mode))
-
-(if (daemonp)
-	(add-hook 'after-make-frame-functions #'apply-my-theme-to-frame))
 
 (message "Loaded init-theme.el")
 (provide 'init-theme)
