@@ -20,7 +20,10 @@
   :ensure t
   :defer t
   :after vterm
-  :bind ("C-`" . vterm-toggle))
+  :bind (("C-`" . vterm-toggle)
+         :map vterm-mode-map
+         ("s-<right>" . vterm-toggle-forward)
+         ("s-<left>" . vterm-toggle-backward)))
 
 
 (message "Loaded init-term.el")

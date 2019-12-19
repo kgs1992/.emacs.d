@@ -26,8 +26,12 @@
   (setq projectile-completion-system 'ivy)
   (setq projectile-enable-caching t)
   (setq projectile-mode-line-function (lambda () (format " [%s]" (projectile-project-name))))
+  (setq projectile-globally-ignored-modes (append '("vterm-mode")
+                                                  projectile-globally-ignored-modes))
   :bind-keymap
   ("C-c p" . projectile-command-map)
+  :bind (("s-<right>" . projectile-next-project-buffer)
+         ("s-<left>" . projectile-previous-project-buffer))
   :hook (after-init . projectile-mode))
 
 ;; Counsel projectile
