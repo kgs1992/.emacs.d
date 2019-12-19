@@ -70,6 +70,7 @@
 (load "~/.emacs.d/init-projectile.el")
 (load "~/.emacs.d/init-grep.el")
 (load "~/.emacs.d/init-tramp.el")
+(load "~/.emacs.d/init-term.el")
 (load "~/.emacs.d/init-magit.el")
 (load "~/.emacs.d/init-editing.el")
 ;; (load "~/.emacs.d/init-tabbar.el")
