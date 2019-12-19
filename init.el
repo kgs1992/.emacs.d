@@ -81,6 +81,9 @@
 ;; (load "~/.emacs.d/init-tabbar.el")
 (load "~/.emacs.d/init-modeline.el")
 
+;; ORG RELATED
+(load "~/.emacs.d/init-org.el")
+
 ;; PYTHON RELATED
 (load "~/.emacs.d/init-python.el")
 
