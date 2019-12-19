@@ -73,6 +73,7 @@
 (load "~/.emacs.d/init-term.el")
 (load "~/.emacs.d/init-magit.el")
 (load "~/.emacs.d/init-editing.el")
+(load "~/.emacs.d/init-polymode.el")
 ;; (load "~/.emacs.d/init-tabbar.el")
 (load "~/.emacs.d/init-modeline.el")
 
