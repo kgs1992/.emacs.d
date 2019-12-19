@@ -15,6 +15,8 @@
 (set-keyboard-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 
+;; (setq debug-on-error t)
+
 ;; Frame customization
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
@@ -60,6 +62,8 @@
 (use-package exec-path-from-shell
   :ensure t
   :demand t
+  :init
+  (setq exec-path-from-shell-check-startup-files nil)
   :config
   (exec-path-from-shell-initialize))
 
