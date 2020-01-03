@@ -17,3 +17,5 @@ async-bytecomp.log
 .python-environments
 smex-items
 .cache/
+.emacs.desktop*
+tramp
