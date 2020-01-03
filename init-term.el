@@ -14,7 +14,8 @@
 (use-package vterm
   :ensure t
   :defer t
-  :hook (after-init . (lambda () (require 'vterm))))
+  :hook (after-init . (lambda () (require 'vterm)))
+  :bind ("C-~" . vterm))
 
 (use-package vterm-toggle
   :ensure t
