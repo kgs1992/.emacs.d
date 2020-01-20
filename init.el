@@ -36,10 +36,33 @@
     (set-mac-defaults))
 
 ;; Speed up startup
+(defvar default-gc-cons-threshold 16777216) ; 16mb
 (defvar old--file-name-handler-alist file-name-handler-alist)
-(setq gc-cons-threshold 402653184      ; Increase memory threshold
-      gc-cons-percentage 0.6           ; for garbage collection.
-      file-name-handler-alist nil)     ; Unset file handlers
+(setq gc-cons-threshold most-positive-fixnum      ; Increase memory threshold
+      gc-cons-percentage 0.6                      ; for garbage collection.
+      file-name-handler-alist nil)                ; Unset file handlers
+(add-hook 'emacs-startup-hook
+          (lambda ()
+            (setq gc-cons-threshold default-gc-cons-threshold
+                  gc-cons-percentage 0.1
+                  file-name-handler-alist old--file-name-handler-alist)))
+
+;; Speedup minibuffer & desktop
+(defun defer-garbage-collection-h ()
+  "Raise `gc-cons-threshold` while the minibuffer is active."
+  (setq gc-cons-threshold most-positive-fixnum))
+
+(defun restore-garbage-collection-h ()
+  "Restore `gc-cons-threshold` after exiting the minibuffer."
+  ;; Defer it so that commands launched immediately after will enjoy the
+  ;; benefits.
+  (run-at-time
+   1 nil (lambda () (setq gc-cons-threshold default-gc-cons-threshold))))
+
+(add-hook 'emacs-startup-hook
+          (lambda ()
+            (add-hook 'minibuffer-setup-hook #'defer-garbage-collection-h)
+            (add-hook 'minibuffer-exit-hook #'restore-garbage-collection-h)))
 
 ;; Set custom file
 (setq custom-file "~/.emacs.d/init-custom.el")
@@ -106,12 +129,6 @@
     (global-unset-key (kbd "C-z")))
 
 (load custom-file :noerror)
-
-;; Reset startup optimizations
-(add-hook 'emacs-startup-hook
-          (lambda () (setq gc-cons-threshold 20000000
-                           gc-cons-percentage 0.1
-                           file-name-handler-alist old--file-name-handler-alist)))
 
 (message "Loaded init.el")
 (provide 'init)
