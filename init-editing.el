@@ -190,6 +190,15 @@
          ("s-0" . default-text-scale-reset))
   )
 
+;; Highlight indent guides
+(use-package highlight-indent-guides
+  :ensure t
+  :defer t
+  :config
+  (setq highlight-indent-guides-method 'character
+        highlight-indent-guides-character ?\┊)
+  :hook (prog-mode . highlight-indent-guides-mode))
+
 (message "Loaded init-editing.el")
 (provide 'init-editing)
 ;;; init-editing.el ends here
