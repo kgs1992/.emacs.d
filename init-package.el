@@ -15,6 +15,7 @@
 (setq package--init-file-ensured t ; Don't modify init
       package-archives '(("melpa" . "http://melpa.org/packages/")
                          ("gnu" . "http://elpa.gnu.org/packages/")))
+(setq package-enable-at-startup nil)
 (package-initialize)
 
 ;; Ensure we have use-package
@@ -29,11 +30,11 @@
 ;; Auto update packages
 (use-package auto-package-update
   :ensure t
-  :demand t
+  :defer t
   :config
   (setq auto-package-update-delete-old-versions t
         auto-package-update-interval 30)
-  (auto-package-update-maybe))
+  :hook (after-init .  auto-package-update-maybe))
 
 (message "Loaded init-package.el")
 (provide 'init-package)

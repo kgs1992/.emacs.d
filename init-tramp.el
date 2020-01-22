@@ -12,7 +12,7 @@
 ;;; Code:
 ;; Tramp for remote editing
 (use-package tramp
-  :demand t
+  :defer t
   :config
   (setq tramp-default-method "sshx")
   (setq backup-directory-alist
@@ -29,7 +29,7 @@
 
 (use-package counsel-tramp
   :ensure t
-  :demand t
+  :defer t
   :config
   (add-hook 'counsel-tramp-pre-command-hook '(lambda ()
                                                (projectile-mode 0)))

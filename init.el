@@ -88,12 +88,10 @@
 ;; Set exec-path from $PATH
 (use-package exec-path-from-shell
   :ensure t
-  :demand t
+  :defer t
   :init
   (setq exec-path-from-shell-check-startup-files nil)
-  :config
-  (exec-path-from-shell-initialize))
-
+  :hook (after-init . exec-path-from-shell-initialize))
 
 ;;;; Configure useful emacs extensions
 
