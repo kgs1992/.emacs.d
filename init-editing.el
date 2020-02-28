@@ -122,7 +122,9 @@
   :hook ((text-mode prog-mode) . nlinum-mode))
 
 ;; ;; Show current function/class
-;; (which-function-mode 1)
+(use-package which-func
+  :defer t
+  :hook (prog-mode . which-function-mode))
 
 ;; Tab/spacing
 (setq-default indent-tabs-mode nil)
