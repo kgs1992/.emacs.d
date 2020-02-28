@@ -24,6 +24,18 @@
   (setq org-src-fontify-natively 't)
   (setq org-src-tab-acts-natively t)
   (setq org-src-window-setup 'current-window)
+  (setq org-todo-keywords
+        '((sequence "TODO" "DOING" "BLOCKED" "REVIEW" "|" "DONE" "ARCHIVED")))
+  (setq org-todo-keyword-faces
+        '(("TODO" . "LightGreen")
+          ("DOING" . "Yellow")
+          ("BLOCKED" . "Red")
+          ("REVIEW" . "Cyan")
+          ("DONE" . "LightGrey")
+          ("ARCHIVED" .  "DarkGrey")))
+  (setq org-highest-priority ?A
+        org-lowest-priority ?D
+        org-default-priority ?C)
   :bind
   ("C-c a" . org-agenda))
 
