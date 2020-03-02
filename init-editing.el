@@ -201,6 +201,16 @@
         highlight-indent-guides-character ?\┊)
   :hook (prog-mode . highlight-indent-guides-mode))
 
+(use-package dimmer
+  :ensure t
+  :defer t
+  :config
+  (setq dimmer-adjustment-mode :foreground)
+  (setq dimmer-fraction 0.5)
+  (setq dimmer-watch-frame-focus-events nil)
+  (dimmer-configure-posframe)
+  :hook (after-init . dimmer-mode))
+
 (message "Loaded init-editing.el")
 (provide 'init-editing)
 ;;; init-editing.el ends here
