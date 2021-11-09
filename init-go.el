@@ -13,13 +13,20 @@
 (use-package go-mode
   :ensure t
   :defer t
+  :after (lsp-mode company)
+  :bind
+  (("C-c ." . lsp-find-definition)
+   ("C-c ," . pop-global-mark))
   :config
-  (defun my-go-mode-hook ()
-    ;; Calling go-fmt before save is done by format-all
-    (add-hook 'before-save-hook 'gofmt-before-save)
-    (local-set-key (kbd "C-c .") 'godef-jump)
-    (local-set-key (kbd "C-c ,") 'pop-global-mark))
-  :hook (go-mode . my-go-mode-hook))
+  (lsp-register-custom-settings
+   '(("gopls.completeUnimported" t t)
+     ("gopls.staticcheck" t t)
+     ("gopls.experimentalTemplateSupport" t t)))
+  (setq lsp-go-codelenses nil)
+  :hook ((go-mode . lsp)
+         (before-save . lsp-format-buffer)
+         ;; (before-save . lsp-organize-imports)
+         ))
 
 (use-package company-go
   :ensure t

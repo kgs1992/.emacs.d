@@ -166,9 +166,29 @@
   :hook ((after-init . global-flycheck-mode)
          (before-save . flycheck-list-errors-only-when-errors)))
 
+(use-package lsp-mode
+  :ensure t
+  :config
+  ;; use flycheck, not flymake
+  (setq lsp-prefer-flymake nil)
+  (setq lsp-auto-guess-root nil)
+  (setq lsp-print-performance nil)
+  (setq lsp-log-io nil)
+  (setq lsp-eldoc-hook nil)
+  (setq lsp-idle-delay 0.500))
+
+;; optional - provides fancy overlay information
+(use-package lsp-ui
+  :ensure t
+  :defer t
+  :config
+  (setq lsp-ui-doc-delay 2)
+  (setq lsp-ui-doc-position 'at-point))
+
 (use-package flycheck-posframe
   :ensure t
   :defer t
+  :after flycheck
   :hook (flycheck-mode . flycheck-posframe-mode))
 
 ;; (use-package format-all
@@ -201,6 +221,7 @@
         highlight-indent-guides-character ?\┊)
   :hook (prog-mode . highlight-indent-guides-mode))
 
+;; Dim unfocused windows
 (use-package dimmer
   :ensure t
   :defer t
@@ -209,6 +230,18 @@
   (setq dimmer-fraction 0.5)
   (setq dimmer-watch-frame-focus-events nil)
   (dimmer-configure-posframe)
+  (dimmer-configure-magit)
+  (dimmer-configure-company-box)
+  (defun dimmer-lsp-ui-doc-p ()
+    (string-prefix-p " *lsp-ui-doc-" (buffer-name)))
+  (add-to-list 'dimmer-prevent-dimming-predicates #'dimmer-lsp-ui-doc-p)
+
+  (defun advices/dimmer-config-change-handler ()
+    (dimmer--dbg-buffers 1 "dimmer-config-change-handler")
+    (let ((ignore (cl-some (lambda (f) (and (fboundp f) (funcall f)))
+                           dimmer-prevent-dimming-predicates)))
+      (dimmer-process-all (not ignore))))
+  (advice-add 'dimmer-config-change-handler :override #'advices/dimmer-config-change-handler)
   :hook (after-init . dimmer-mode))
 
 (message "Loaded init-editing.el")
