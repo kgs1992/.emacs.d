@@ -36,11 +36,12 @@
     (set-mac-defaults))
 
 ;; Speed up startup
-(defvar default-gc-cons-threshold 16777216) ; 16mb
-(defvar old--file-name-handler-alist file-name-handler-alist)
+(defvar default-gc-cons-threshold 400000000)      ; 400mb
 (setq gc-cons-threshold most-positive-fixnum      ; Increase memory threshold
       gc-cons-percentage 0.6                      ; for garbage collection.
       file-name-handler-alist nil)                ; Unset file handlers
+(defvar old--file-name-handler-alist file-name-handler-alist)
+(setq read-process-output-max (* (* 1024 1024) 3)) ;; 3mb
 (add-hook 'emacs-startup-hook
           (lambda ()
             (setq gc-cons-threshold default-gc-cons-threshold
@@ -88,10 +89,11 @@
 ;; Set exec-path from $PATH
 (use-package exec-path-from-shell
   :ensure t
-  :defer t
-  :init
+  :demand t
+  :config
   (setq exec-path-from-shell-check-startup-files nil)
-  :hook (after-init . exec-path-from-shell-initialize))
+  (nconc exec-path-from-shell-variables '("PATH" "GOPATH" "GOROOT" "PYTHONPATH" "LC_TYPE" "LC_ALL" "LANG" "SSH_AGENT_PID" "SSH_AUTH_SOCK" "SHELL"))
+  (exec-path-from-shell-initialize))
 
 ;;;; Configure useful emacs extensions
 
