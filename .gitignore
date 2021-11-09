@@ -19,3 +19,4 @@ smex-items
 .cache/
 .emacs.desktop*
 tramp
+eln-cache/
