@@ -14,18 +14,18 @@
 (use-package vterm
   :ensure t
   :defer t
+  :config
+  (setq vterm-module-cmake-args "-USE_SYSTEM_LIBVTERM=yes")
   :hook (after-init . (lambda () (require 'vterm)))
-  :bind ("C-~" . vterm))
+  :bind ("s-~" . vterm))
 
-(use-package vterm-toggle
+(use-package multi-vterm
   :ensure t
   :defer t
-  :after vterm
-  :bind (("C-`" . vterm-toggle)
+  :bind (("s-`" . multi-vterm-project)
          :map vterm-mode-map
-         ("s-<right>" . vterm-toggle-forward)
-         ("s-<left>" . vterm-toggle-backward)))
-
+         ("s-<right>" . multi-vterm-next)
+         ("s-<left>" . multi-vterm-prev)))
 
 (message "Loaded init-term.el")
 (provide 'init-term)
