@@ -46,6 +46,17 @@
 
 (add-to-list 'auto-mode-alist '(".*\.js\'" . 'rjsx-mode))
 
+(use-package add-node-modules-path
+  :ensure t
+  :defer t
+  :hook (web-mode . add-node-modules-path))
+
+(use-package prettier-js
+  :ensure t
+  :defer t
+  :after add-node-modules-path
+  :hook (web-mode . prettier-js-mode))
+
 (message "Loaded init-jsx.el")
 (provide 'init-jsx)
 ;;; init-jsx.el ends here
