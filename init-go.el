@@ -37,6 +37,11 @@
                      (set (make-local-variable 'company-backends) '(company-go))
                      (company-mode 1))))
 
+;; Local playground
+(use-package go-playground
+  :ensure t
+  :defer t)
+
 (message "Loaded init-go.el")
 (provide 'init-go)
 ;;; init-go.el ends here
