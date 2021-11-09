@@ -27,10 +27,11 @@
 ;; Open files in the same frame
 (setq ns-pop-up-frames nil)
 
-;; Delete trailing whitespaces
-(use-package whitespace
+;; Clenup whitespaces
+(use-package whitespace-cleanup-mode
+  :ensure t
   :defer t
-  :hook (before-save . delete-trailing-whitespace))
+  :hook (after-init . global-whitespace-cleanup-mode))
 
 ;; Turn on spell check
 (use-package flyspell
@@ -53,8 +54,13 @@
   :defer t
   :hook (prog-mode . rainbow-delimiters-mode)
   :config
-  (show-paren-mode 1)
   (setq show-paren-style 'expression))
+
+;; Volatile highlights- visual feedback for operations (example: undo)
+(use-package volatile-highlights
+  :ensure t
+  :defer t
+  :hook (after-init . volatile-highlights-mode))
 
 ;; Autocomplete - company
 (use-package company
@@ -64,7 +70,6 @@
   (setq company-tooltip-limit 20)                      ; Bigger popup window
   (setq company-idle-delay .3)                         ; Decrease delay before autocompletion popup shows
   (setq company-echo-delay 0)                          ; Remove annoying blinking
-  (setq company-auto-complete-chars 2)                 ; Start autocompletion after number of chars
   (setq company-begin-commands '(self-insert-command)) ; Start autocompletion only after typing
   (setq company-tooltip-align-annotations t)
   :hook (after-init . global-company-mode))
@@ -132,11 +137,16 @@
 (setq indent-line-function 'insert-tab)
 
 ;; Undo-redo keybindings
-(use-package undo-tree
+(use-package undo-fu
   :ensure t
   :defer t
-  :bind (("C--" . undo-only)
-         ("M--" . 'undo-tree-redo)))
+  :bind (("C--" . undo-fu-only-undo)
+         ("M--" . undo-fu-only-redo)))
+
+(use-package undo-fu-session
+  :ensure t
+  :defer t
+  :hook (after-init . global-undo-fu-session-mode))
 
 ;; Symbol highlighting
 (use-package symbol-overlay
@@ -195,13 +205,6 @@
 ;;   :ensure t
 ;;   :defer t
 ;;   :hook (prog-mode . format-all-mode))
-
-;; Buffer expose - Visual buffer switching
-(use-package buffer-expose
-  :ensure t
-  :defer t
-  :bind ("C-x C-b" . buffer-expose-no-stars)
-  :hook (after-init . buffer-expose-mode))
 
 ;; Text scaling
 (use-package default-text-scale
