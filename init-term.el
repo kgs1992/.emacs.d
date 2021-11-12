@@ -22,6 +22,7 @@
 (use-package multi-vterm
   :ensure t
   :defer t
+  :after vterm
   :bind (("s-`" . multi-vterm-project)
          :map vterm-mode-map
          ("s-<right>" . multi-vterm-next)

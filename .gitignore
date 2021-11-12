@@ -20,3 +20,5 @@ smex-items
 .emacs.desktop*
 tramp
 eln-cache/
+.lsp-session*
+undo-fu-session/

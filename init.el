@@ -36,7 +36,7 @@
     (set-mac-defaults))
 
 ;; Speed up startup
-(defvar default-gc-cons-threshold 400000000)      ; 400mb
+(defvar default-gc-cons-threshold 1000000)        ; 1mb
 (setq gc-cons-threshold most-positive-fixnum      ; Increase memory threshold
       gc-cons-percentage 0.6                      ; for garbage collection.
       file-name-handler-alist nil)                ; Unset file handlers
@@ -57,8 +57,7 @@
   "Restore `gc-cons-threshold` after exiting the minibuffer."
   ;; Defer it so that commands launched immediately after will enjoy the
   ;; benefits.
-  (run-at-time
-   1 nil (lambda () (setq gc-cons-threshold default-gc-cons-threshold))))
+  (setq gc-cons-threshold default-gc-cons-threshold))
 
 (add-hook 'emacs-startup-hook
           (lambda ()
